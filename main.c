@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-// base main
+// base main ajustada 
 int main(int argc, char *argv[]) {
     if (argc < 4) {
         printf("Uso: %s <metodo> <quantidade> <situacao> <chave> [-P]\n", argv[0]);
