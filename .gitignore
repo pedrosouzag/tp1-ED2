@@ -4,6 +4,3 @@
 
 # Ignorar arquivos de dados
 *.bin
-
-# Ignorar outros arquivos
-*.txt
