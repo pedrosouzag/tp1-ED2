@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "arvoreb.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "acessosequencial.h": "c"
     }
 }

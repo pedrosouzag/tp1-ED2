@@ -4,20 +4,20 @@
 
 #include "arvoreb.h"
 
-Registro* pesquisa(Pagina *pagina, int chave, long *comparacoes) {
+Registro* pesquisa(Pagina *pagina, int chave, long *comp) {
     int i;
 
     while (pagina != NULL) {
         i = 0;
 
-          // percorre os itens da página até achar posicao
+          // percorre os itens da pagina at                  achar posicao
         while (i < pagina->n && chave > pagina->registro[i].chave) {
             i++;
-            (*comparacoes)++;
+            (*comp)++;
         }
 
         // se achou, retorno o ponteiro para o registro
-        (*comparacoes)++;
+        (*comp)++;
         if (i < pagina->n && chave == pagina->registro[i].chave) {
             return &pagina->registro[i];
         }
@@ -28,7 +28,7 @@ Registro* pesquisa(Pagina *pagina, int chave, long *comparacoes) {
     return NULL;
 }
 
-// Insere o registro e o ponteiro apDir dentro da página ap
+// Insere o registro e o ponteiro apDir dentro da pagina ap
 
 void InsereNaPagina(Pagina *ap, Registro Reg, Pagina *apDir){
     int k = ap->n;
@@ -152,7 +152,7 @@ void Insere(Registro reg, Pagina **ap, long *comp) {
     }
 }
 
-void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz, long *transferencias, long *comparacoes, double *tempo) {
+void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz, long *transferencias, long *comp, double *tempo) {
     FILE *arquivo;
     Registro reg;
     int registrosLidos = 0;
@@ -165,7 +165,7 @@ void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz,
     }
     
     *transferencias = 0;
-    *comparacoes = 0;
+    *comp = 0;
     *raiz = NULL;
     
     printf("Lendo %d registros de %s...\n", numRegistros, nomeArquivo);
@@ -175,7 +175,7 @@ void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz,
     // Lê registro, insere, lê registro, insere...
     while (registrosLidos < numRegistros && fread(&reg, sizeof(Registro), 1, arquivo) == 1) {
         (*transferencias)++;
-        Insere(reg, raiz, comparacoes);
+        Insere(reg, raiz, comp);
         registrosLidos++;
     }
     
@@ -184,19 +184,19 @@ void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz,
     
     fclose(arquivo);
     
-    printf("Concluído! Arquivo: %s | Registros: %d | Transferências: %ld | Comparações: %ld | Tempo: %.6f s\n",
-           nomeArquivo, registrosLidos, *transferencias, *comparacoes, *tempo);
+    printf("Concluido! Arquivo: %s | Registros: %d | Transferências: %ld | Comparacões: %ld | Tempo: %.6f s\n",
+           nomeArquivo, registrosLidos, *transferencias, *comp, *tempo);
 }
 
 
-// Função para pesquisar 20 chaves aleatórias
+// Funcao para pesquisar 20 chaves aleatorias
 void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *raiz) {
     FILE *arquivo;
     Registro reg;
-    long comparacoesTotal = 0;
+    long compTotal = 0;
     clock_t inicio, fim;
     
-    printf("\n=== PESQUISANDO 20 CHAVES ALEATÓRIAS ===\n");
+    printf("\n=== PESQUISANDO 20 CHAVES ALEAToRIAS ===\n");
     
     srand(time(NULL));
     inicio = clock();
@@ -204,7 +204,7 @@ void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *ra
     for (int i = 0; i < 20; i++) {
         int posicao = rand() % numRegistros;
         
-        // Abre arquivo para pegar chave na posição aleatória
+        // Abre arquivo para pegar chave na posicao aleatoria
         arquivo = fopen(nomeArquivo, "rb");
         fseek(arquivo, posicao * sizeof(Registro), SEEK_SET);
         fread(&reg, sizeof(Registro), 1, arquivo);
@@ -213,18 +213,18 @@ void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *ra
         // Pesquisa a chave
         long comp = 0;
         Registro *resultado = pesquisa(raiz, reg.chave, &comp);
-        comparacoesTotal += comp;
+        compTotal += comp;
         
         if (resultado == NULL) {
-            printf("ERRO: Chave %d (pos %d) não encontrada!\n", reg.chave, posicao);
+            printf("ERRO: Chave %d (pos %d) nao encontrada!\n", reg.chave, posicao);
         }
     }
     
     fim = clock();
     double tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     
-    printf("Pesquisas: 20 | Comparações totais: %ld | Média: %.2f | Tempo: %.6f s\n",
-           comparacoesTotal, comparacoesTotal/20.0, tempo);
+    printf("Pesquisas: 20 | Comparacões totais: %ld | Media: %.2f | Tempo: %.6f s\n",
+           compTotal, compTotal/20.0, tempo);
 }
 
     

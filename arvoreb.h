@@ -19,12 +19,12 @@ typedef struct pagina {
     struct pagina *filhos [MM+ 1];
 }Pagina;
 
-Registro* pesquisa(Pagina *pagina, int chave, long *comparacoes);
+Registro* pesquisa(Pagina *pagina, int chave, long *comp);
 
 void InsereNaPagina(Pagina *Ap, Registro Reg, Pagina *ApDir);
 void Ins (Registro reg, Pagina *ap, short *cresceu, Registro *regRetorno, Pagina **apRetorno, long *comp);
 void Insere(Registro reg, Pagina **ap, long *comp);
-void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz, long *transferencias, long *comparacoes, double *tempo);
+void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz, long *transferencias, long *comp, double *tempo);
 void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *raiz);
 
 #endif

@@ -1,5 +1,6 @@
 
 #include "arvoreb.h"
+#include "acessoSequencial.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -15,7 +16,7 @@ int main(int argc, char *argv[]) {
     int quantidade = atoi(argv[2]);
     int situacao = atoi(argv[3]);
     
-    // Verifica se é modo teste (-T)
+    // Verifica se e modo teste (-T)
     int modoTeste = (argc == 5 && strcmp(argv[4], "-T") == 0);
     
     int chave = 0;
@@ -40,23 +41,63 @@ int main(int argc, char *argv[]) {
     }
     
     if (metodo == 1) {
-        printf("Metodo 1: Acesso Sequencial Indexado - NAO IMPLEMENTADO\n");
+        if (modoTeste) {
+            // Modo teste: pesquisa 20 chaves aleatorias
+            pesquisar20AleatoriasSI(nomeArquivo, quantidade);
+        } else {
+            // Modo normal: pesquisa uma chave especifica
+            if (imprimirChaves) {
+                printf("\nChaves do arquivo:\n");
+                FILE *arquivo = fopen(nomeArquivo, "rb");
+                TipoItem item;
+                int count = 0;
+                while (count < quantidade && fread(&item, sizeof(TipoItem), 1, arquivo) == 1) {
+                    printf("%d ", item.chave);
+                    if ((count + 1) % 10 == 0) printf("\n");
+                    count++;
+                }
+                printf("\n");
+                fclose(arquivo);
+            }
+            
+            printf("\nPesquisando chave %d...\n", chave);
+            long transferencias, comp;
+            double tempo;
+            TipoItem resultado;
+            int encontrado;
+            
+            lerArquivoSequencial(nomeArquivo, quantidade, chave, 
+                                &transferencias, &comp, &tempo, 
+                                &resultado, &encontrado);
+            
+            if (encontrado) {
+                printf("CHAVE ENCONTRADA\n");
+                printf("comp: %ld | Tempo: %.6f s\n", comp, tempo);
+                if (imprimirChaves) {
+                    printf("Chave: %d | Dado1: %ld | Dado2: %.50s...\n", 
+                           resultado.chave, resultado.dado1, resultado.dado2);
+                }
+            } else {
+                printf("CHAVE NAO ENCONTRADA\n");
+                printf("comp: %ld | Tempo: %.6f s\n", comp, tempo);
+            }
+        }
         
     } else if (metodo == 2) {
         printf("Metodo 2: Arvore Binaria - NAO IMPLEMENTADO\n");
         
     } else if (metodo == 3) {
         Pagina *raiz;
-        long transferencias, comparacoes;
+        long transferencias, comp;
         double tempo;
         
-        lerArquivoArvoreB(nomeArquivo, quantidade, &raiz, &transferencias, &comparacoes, &tempo);
+        lerArquivoArvoreB(nomeArquivo, quantidade, &raiz, &transferencias, &comp, &tempo);
         
         if (modoTeste) {
-            // Modo teste: pesquisa 20 chaves aleatórias
+            // Modo teste: pesquisa 20 chaves aleatorias
             pesquisar20Aleatorias(nomeArquivo, quantidade, raiz);
         } else {
-            // Modo normal: pesquisa uma chave específica
+            // Modo normal: pesquisa uma chave especifica
             if (imprimirChaves) {
                 printf("\nChaves do arquivo:\n");
                 FILE *arquivo = fopen(nomeArquivo, "rb");
@@ -80,14 +121,14 @@ int main(int argc, char *argv[]) {
             
             if (resultado != NULL) {
                 printf("CHAVE ENCONTRADA\n");
-                printf("Comparacoes: %ld | Tempo: %.6f s\n", comp, tempoPesquisa);
+                printf("comp: %ld | Tempo: %.6f s\n", comp, tempoPesquisa);
                 if (imprimirChaves) {
                     printf("Chave: %d | Dado1: %ld | Dado2: %.50s...\n", 
                            resultado->chave, resultado->dado1, resultado->dado2);
                 }
             } else {
                 printf("CHAVE NAO ENCONTRADA\n");
-                printf("Comparacoes: %ld | Tempo: %.6f s\n", comp, tempoPesquisa);
+                printf("comp: %ld | Tempo: %.6f s\n", comp, tempoPesquisa);
             }
         }
         

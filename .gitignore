@@ -1,4 +1,4 @@
-# Ignorar executáveis
+# Ignorar executaveis
 *.o
 *.out
 
