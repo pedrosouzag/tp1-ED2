@@ -21,7 +21,7 @@ typedef struct {
 typedef struct {
     TipoItem itens[ITENSPAGINA];
     int numItens;  // quantos itens estao realmente na pagina
-} Pagina;
+} PaginaAS;
 
 // Funcao principal que carrega o indice e faz a busca
 void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave,

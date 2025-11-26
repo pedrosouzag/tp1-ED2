@@ -55,7 +55,7 @@ int buscarPaginaNoIndice(int chave, TipoIndice tabela[], int numPaginas, long *c
 }
 
 // Funcao auxiliar para carregar uma pagina do arquivo
-int carregarPagina(const char *nomeArquivo, int numPagina, Pagina *paginaAlvo, int numRegistros, long *transferencias) {
+int carregarPagina(const char *nomeArquivo, int numPagina, PaginaAS *paginaAlvo, int numRegistros, long *transferencias) {
     FILE *arquivo = fopen(nomeArquivo, "rb");
     if (!arquivo) {
         return 0;
@@ -83,7 +83,7 @@ int carregarPagina(const char *nomeArquivo, int numPagina, Pagina *paginaAlvo, i
 }
 
 // Funcao auxiliar para buscar dentro de uma pagina
-int buscarNaPagina(int chave, Pagina *pag, long *comp, TipoItem *resultado) {
+int buscarNaPagina(int chave, PaginaAS *pag, long *comp, TipoItem *resultado) {
     for (int i = 0; i < pag->numItens; i++) {
         (*comp)++;
         if (pag->itens[i].chave == chave) {
@@ -122,7 +122,7 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
     
     //carrega a pagina e busca
     if (numPaginaAlvo >= 0) {
-        Pagina paginaAlvo;
+        PaginaAS paginaAlvo;
         long transfPagina = 0;
         
         if (carregarPagina(nomeArquivo, numPaginaAlvo, &paginaAlvo, quantidade, &transfPagina)) {

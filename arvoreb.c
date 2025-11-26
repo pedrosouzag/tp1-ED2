@@ -10,7 +10,7 @@ Registro* pesquisa(Pagina *pagina, int chave, long *comp) {
     while (pagina != NULL) {
         i = 0;
 
-          // percorre os itens da pagina at                  achar posicao
+          // percorre os itens da pagina at achar posicao
         while (i < pagina->n && chave > pagina->registro[i].chave) {
             i++;
             (*comp)++;

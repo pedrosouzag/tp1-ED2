@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 // base main
 int main(int argc, char *argv[]) {
     if (argc < 4) {
