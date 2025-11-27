@@ -54,6 +54,35 @@ int buscarPaginaNoIndice(int chave, TipoIndice tabela[], int numPaginas, long *c
     return paginaAlvo;
 }
 
+int buscarPaginaNoIndiceBinario(int chave, TipoIndice tabela[], int numPaginas, long *comp) {
+    *comp = 0;
+
+    int inicio = 0;
+    int fim = numPaginas - 1;
+    int paginaAlvo = -1;
+
+    while (inicio <= fim) {
+
+        int meio = (inicio + fim) / 2;
+        (*comp)++;
+
+        // Verifica se a chave pertence ao intervalo desta página
+        if ((meio == numPaginas - 1 || chave < tabela[meio + 1].chave) && chave >= tabela[meio].chave) {
+            return tabela[meio].posicao;  // retorno correto
+        }
+
+        // Decide para qual lado ir
+        if (chave < tabela[meio].chave) {
+            fim = meio - 1;
+        } else {
+            inicio = meio + 1;
+        }
+    }
+
+    return paginaAlvo;  // retorna -1 se não encontrou
+}
+
+
 // Funcao auxiliar para carregar uma pagina do arquivo
 int carregarPagina(const char *nomeArquivo, int numPagina, PaginaAS *paginaAlvo, int numRegistros, long *transferencias) {
     FILE *arquivo = fopen(nomeArquivo, "rb");
