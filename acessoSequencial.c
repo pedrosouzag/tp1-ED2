@@ -141,7 +141,9 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
     
     //cria o indice de paginas
     long transfIndice = 0;
-    criarIndicePaginas(nomeArquivo, tabelaIndice, quantidade, &transfIndice);
+    int paginasCriadas = criarIndicePaginas(nomeArquivo, tabelaIndice, quantidade, &transfIndice);
+    if (paginasCriadas == 0) return; // vai retornar zero caso o arquivo nao exista 
+    
     *transferencias += transfIndice;
     
     //busca no indice
