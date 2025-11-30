@@ -5,85 +5,95 @@
 #include "registro.h"
 
 void criarArvoreBinaria(const char *nomeArquivoArvore){
+    // cria o arquivo onde a arvore sera armazenada
     FILE *arquivo = fopen(nomeArquivoArvore, "wb");
     if (arquivo == NULL){
-        printf("Erro ao criar arquivo da arvore\n");
+        printf("erro ao criar arquivo da arvore\n");
     }
 
+    // cria um no raiz vazio
     NoArquivo raizVazia;
     raizVazia.registro.chave = -1;
     raizVazia.esquerda = -1;
     raizVazia.direita = -1;
 
+    // grava a raiz no arquivo
     fwrite(&raizVazia, sizeof(NoArquivo), 1, arquivo);
     fclose(arquivo);
 }
 
 NoArquivo lerNo(FILE *arquivo, long posicao){
+    // posiciona o ponteiro e le o no
     NoArquivo no;
     fseek(arquivo, posicao * sizeof(NoArquivo), SEEK_SET);
     fread(&no, sizeof(NoArquivo), 1, arquivo);
-
     return no;
 }
 
 void escreveNo(FILE *arquivo, long posicao, NoArquivo no){
+    // posiciona o ponteiro e escreve o no atualizado
     fseek(arquivo, posicao * sizeof(NoArquivo), SEEK_SET);
     fwrite(&no, sizeof(NoArquivo), 1, arquivo);
 }
 
-//função auxiliar para a função inserir
 long inserirRecursivo(FILE * arquivo, long posicao, Registro reg, long *comp){
-    //se for -1 cria um novo no no final do arquivo
+    // cria um novo no quando a posicao e -1
     if(posicao == -1){
         NoArquivo novoNo;
         novoNo.registro = reg;
         novoNo.esquerda = -1;
         novoNo.direita = -1;
 
-        //vai pro final do arquivo
+        // escreve no final do arquivo
         fseek(arquivo, 0, SEEK_END);
         long novaPosicao = ftell(arquivo) / sizeof(NoArquivo);
 
         fwrite(&novoNo, sizeof(NoArquivo), 1, arquivo);
-
         return novaPosicao;
     }
 
-    //le o no atual
+    // le o no atual da arvore
     NoArquivo noAtual = lerNo(arquivo, posicao);
+
     (*comp)++;
+
+    // compara e decide se insere a direita
     if(reg.chave > noAtual.registro.chave){
-        //insere a direita
         noAtual.direita = inserirRecursivo(arquivo, noAtual.direita, reg, comp);
-        escreverNo(arquivo, posicao, noAtual);
-    }else if(reg.chave < noAtual.registro.chave){
-        //insere a esquerda
+        escreveNo(arquivo, posicao, noAtual);
+    }
+    // compara e decide se insere a esquerda
+    else if(reg.chave < noAtual.registro.chave){
         noAtual.esquerda = inserirRecursivo(arquivo, noAtual.esquerda, reg, comp);
         escreveNo(arquivo, posicao, noAtual);
     }
-    //se for igual noa insere pra evitar duplicata
+    // se for igual nao insere para evitar duplicata
 
     return posicao;
 }
 
-void inserirEmArquivo(const char *nomeaArquivoArvore, Registro reg, long *comp){
-    FILE *arquivo= fopen(nomeaArquivoArvore, "r+b");
+void inserirEmArquivo(const char *nomeArquivoArvore, Registro reg, long *comp){
+    // abre o arquivo da arvore para escrita
+    FILE *arquivo = fopen(nomeArquivoArvore, "r+b");
     if(arquivo == NULL){
-        printf("Erro ao abrir arquivo\n");
+        printf("erro ao abrir arquivo\n");
         return;
     }
 
-    //le a raiz
+    // le a raiz da arvore
     NoArquivo raiz = lerNo(arquivo, 0);
 
-    //se tiver vazia faz a primeira inserção
+    // insere na raiz se estiver vazia
     if(raiz.registro.chave == -1){
-        raiz.registro = reg;
-        raiz.esquerda = -1;
-        raiz.direita = -1;
-        escreverNo(arquivo, 0, reg, comp);
-    }else{
+        NoArquivo novoNo;
+        novoNo.registro = reg;
+        novoNo.esquerda = -1;
+        novoNo.direita = -1;
+
+        escreveNo(arquivo, 0, novoNo);
+    }
+    else{
+        // chama a recursao para inserir em outra posicao
         inserirRecursivo(arquivo, 0, reg, comp);
     }
 
@@ -91,130 +101,144 @@ void inserirEmArquivo(const char *nomeaArquivoArvore, Registro reg, long *comp){
 }
 
 Registro* buscarEmArquivo(const char *nomeArquivoArvore, int chave, long *comp, long *transferencias){
-    FILE *arq = fopen (nomeArquivoArvore, "rb");
+    // abre o arquivo da arvore para leitura
+    FILE *arq = fopen(nomeArquivoArvore, "rb");
     if (!arq){
-        printf("Erro ao abrir o arquivo da arvore binaria");
+        printf("erro ao abrir o arquivo da arvore binaria\n");
         return NULL;
     }
+
     NoArquivo no;
     long posicao = 0;
 
     *comp = 0;
     *transferencias = 0;
 
+    // percorre a arvore ate achar o final ou encontrar a chave
     while (posicao != -1){
-        // move ate o no desejaod na arvore 
-        fseek(arq, posicao * sizeof (NoArquivo), SEEK_SET);
-        
-        // leitura do no na posicao movida
-        if ( fread(&no, sizeof(NoArquivo), 1, arq) != 1){
+        fseek(arq, posicao * sizeof(NoArquivo), SEEK_SET);
+
+        // le o no da posicao
+        if (fread(&no, sizeof(NoArquivo), 1, arq) != 1){
             fclose(arq);
             return NULL;
         }
-        // contagem de transferencias em arquivo, pois lemos
-        (*transferencias)++;
 
+        (*transferencias)++;
         (*comp)++;
 
-        if (chave = no.registro.chave){
-            // se encontrar a chave, retorna a copia do registro
-            Registro *regRetono = malloc (sizeof(Registro));
-            *regRetono = no.registro;
+        // verifica se a chave procurada esta aqui
+        if (chave == no.registro.chave){
+            Registro *regRetorno = malloc(sizeof(Registro));
+            *regRetorno = no.registro;
             fclose(arq);
-            return regRetono;
+            return regRetorno;
         }
 
         (*comp)++;
+
+        // decide o lado para continuar a busca
         if (chave < no.registro.chave){
             posicao = no.esquerda;
-        } else {
+        } 
+        else {
             posicao = no.direita;
         }
-            
     }
-    // fecha e retorna NULL em caso de erro
-    fclose (arq);
-    return NULL;                   
-     
-}
-    
 
+    fclose(arq);
+    return NULL;                   
+}
 
 void lerArquivoBinario(const char *nomeArquivoDados, const char *nomeArquivoArvore, int numRegistros, long *transferencias, long *comp, double *tempo){
-    FILE *arquivo;
+    // abre arquivo com registros
+    FILE *arquivo = fopen(nomeArquivoDados, "rb");
+    if(arquivo == NULL){
+        printf("erro ao abrir arquivo de dados\n");
+        return;
+    }
+
     Registro reg;
     int registrosLidos = 0;
     clock_t inicio, fim;
 
-    //cria o arquivo da arvore vazia
+    // cria a arvore vazia
     criarArvoreBinaria(nomeArquivoArvore);
-
-    arquivo = fopen(nomeArquivoArvore, "rb");
-    if(arquivo == NULL){
-        printf("Erro ao abrir arquivo");
-        return;
-    }
 
     *transferencias = 0;
     *comp = 0;
-    printf("Lendo %d registro de %s construido arvore em %s \n", numRegistros, nomeArquivoDados, nomeArquivoArvore);
+
+    printf("lendo %d registros de %s construindo arvore em %s\n",
+           numRegistros, nomeArquivoDados, nomeArquivoArvore);
 
     inicio = clock();
 
+    // le os registros e insere na arvore
     while(registrosLidos < numRegistros && fread(&reg, sizeof(Registro), 1, arquivo) == 1){
         (*transferencias)++;
+
         long compInsercao = 0;
         inserirEmArquivo(nomeArquivoArvore, reg, &compInsercao);
+
         *comp += compInsercao;
         registrosLidos++;
     }
 
     fim = clock();
-    *tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC; // converte os ticks de clock para segundo
+    *tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
     fclose(arquivo);
-    
-    printf("Arquivo: %s | Registro: %d | Transferencias: %ld | Comparacoes: %ld | tempo: %.6f s\n", *transferencias, *comp, *tempo);
-    
+
+    printf("arquivo: %s | registros: %d | transferencias: %ld | comparacoes: %ld | tempo: %.6f s\n",
+           nomeArquivoDados, numRegistros, *transferencias, *comp, *tempo);
 }
 
 void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArquivoArvore, int numRegistros){
+    // pesquisa 20 registros aleatorios na arvore
     FILE *arquivo;
     Registro reg;
+
     long transTotal = 0;
     long compTotal = 0;
+
     clock_t inicio, fim;
-    
-    printf("Pesquisando 20 chaves aleatorias\n");
+
+    printf("pesquisando 20 chaves aleatorias\n");
 
     srand(time(NULL));
     inicio = clock();
 
     for(int i = 0; i < 20; i++){
+        // escolhe uma posicao aleatoria do arquivo de dados
         int posicao = rand() % numRegistros;
 
-        //abre a chave e pega na posição aleatoria
-        arquivo = fopen(nomeArquivoArvore, "rb");
+        // abre o arquivo de dados e le um registro aleatorio
+        arquivo = fopen(nomeArquivoDados, "rb");
         fseek(arquivo, posicao * sizeof(Registro), SEEK_SET);
         fread(&reg, sizeof(Registro), 1, arquivo);
         fclose(arquivo);
 
-        //pesquisa a chave
         long comp = 0;
         long transf = 0;
+
+        // busca a chave na arvore
         Registro *resultado = buscarEmArquivo(nomeArquivoArvore, reg.chave, &comp, &transf);
+
         compTotal += comp;
         transTotal += transf;
 
-        if(resultado == NULL){
-            printf("Chave %d (pos %d) nao encontrada\n", reg.chave, posicao);
-        }else{
+        // libera memoria se achou
+        if(resultado != NULL){
             free(resultado);
+        }
+        else{
+            printf("chave %d (pos %d) nao encontrada\n", reg.chave, posicao);
         }
     }
 
     fim = clock();
     double tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
-    printf("Pesquisas: 20 | comparacoes totais: %ld | media: %.2f | transferencias %ld | tempo: %.6f s\n", compTotal, compTotal/20.0, transTotal, tempo);
+    printf("pesquisas: 20 | comparacoes totais: %ld | media: %.2f | transferencias: %ld | tempo: %.6f s\n",
+           compTotal, compTotal / 20.0, transTotal, tempo);
 }
