@@ -1,17 +1,12 @@
 #ifndef ARVOREB_H
 #define ARVOREB_H
+#include "registro.h"
 
 #define TRUE 1
 #define FALSE 0
 
 #define ORDEM 3 // fica a criterio para trocar
 #define MM 2 * ORDEM
-
-typedef struct registro {
-    int chave;
-    long int dado1;
-    char dado2[5001];
-}Registro;
 
 typedef struct pagina {
     int n;
@@ -26,5 +21,7 @@ void Ins (Registro reg, Pagina *ap, short *cresceu, Registro *regRetorno, Pagina
 void Insere(Registro reg, Pagina **ap, long *comp);
 void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz, long *transferencias, long *comp, double *tempo);
 void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *raiz);
+void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves);
+
 
 #endif

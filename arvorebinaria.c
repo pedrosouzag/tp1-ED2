@@ -188,9 +188,6 @@ void lerArquivoBinario(const char *nomeArquivoDados, const char *nomeArquivoArvo
     *tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
     fclose(arquivo);
-
-    printf("arquivo: %s | registros: %d | transferencias: %ld | comparacoes: %ld | tempo: %.6f s\n",
-           nomeArquivoDados, numRegistros, *transferencias, *comp, *tempo);
 }
 
 void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArquivoArvore, int numRegistros){
@@ -239,6 +236,63 @@ void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArqui
     fim = clock();
     double tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
-    printf("pesquisas: 20 | comparacoes totais: %ld | media: %.2f | transferencias: %ld | tempo: %.6f s\n",
-           compTotal, compTotal / 20.0, transTotal, tempo);
+    printf("pesquisas: 20 | comparacoes totais: %ld | transferencias: %ld | tempo: %.6f s\n", compTotal, transTotal, tempo);
 }
+
+void executarArvoreBinaria(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves) {
+
+    const char *arquivoArvore = "arvore_binaria.bin";
+
+    long transferencias = 0;
+    long comp = 0;
+    double tempo = 0;
+
+    // modo teste -T : constroi arvore e faz 20 buscas aleatorias
+    if (modoTeste) {
+        lerArquivoBinario(nomeArquivo, arquivoArvore, quantidade, &transferencias, &comp, &tempo);
+        pesquisar20AleatoriasAB(nomeArquivo, arquivoArvore, quantidade);
+        return;
+    }
+
+    // imprimir chaves se -P for usado
+    if (imprimirChaves) {
+        printf("\nchaves do arquivo:\n");
+        FILE *arquivo = fopen(nomeArquivo, "rb");
+        Registro reg;
+        int count = 0;
+        while (count < quantidade && fread(&reg, sizeof(Registro), 1, arquivo) == 1) {
+            printf("%d ", reg.chave);
+            if ((count + 1) % 10 == 0) printf("\n");
+            count++;
+        }
+        printf("\n");
+        fclose(arquivo);
+    }
+
+    // construindo a arvore
+    lerArquivoBinario(nomeArquivo, arquivoArvore, quantidade, &transferencias, &comp, &tempo);
+
+    // busca normal
+    printf("\npesquisando chave %d...\n", chave);
+
+    long compBusca = 0;
+    long transfBusca = 0;
+    Registro *resultado = buscarEmArquivo(arquivoArvore, chave, &compBusca, &transfBusca);
+
+    // somar os valores da busca aos totais
+    transferencias += transfBusca;
+    comp += compBusca;
+
+    if (resultado != NULL) {
+        printf("chave encontrada\n");
+        printf("chave: %d | dado1: %ld | dado2: %.50s\n", resultado->chave, resultado->dado1, resultado->dado2);
+        free(resultado);
+    } else {
+        printf("chave nao encontrada\n");
+    }
+
+    // estatisticas 
+    printf("transferencias: %ld | comparacoes: %ld | tempo: %.6f s\n", transferencias, comp, tempo);
+}
+
+

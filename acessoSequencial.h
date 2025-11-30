@@ -31,4 +31,6 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave,
 // Funcao para teste com 20 chaves aleatorias
 void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade);
 
+void executarSequencial(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves);
+
 #endif

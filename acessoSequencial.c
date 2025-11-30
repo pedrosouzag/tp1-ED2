@@ -170,8 +170,6 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
     clock_t fim = clock();
     *tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     
-    //printa a conclusao
-    printf("Concluido! Arquivo: %s | Registros: %d | Transferencias: %ld | comp: %ld | Tempo: %.6f s\n", nomeArquivo, quantidade, *transferencias, *comp, *tempo);
 }
 
 //funcao para teste com 20 chaves aleatorias
@@ -221,4 +219,52 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
     printf("Pesquisas: 20 | comp totais: %ld | Tempo: %.6f s\n", compTotal, tempoTotal);
     
     free(chaves);
+}
+
+void executarSequencial(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves) {
+
+    // modo teste (-T): faz 20 buscas aleatorias
+    if (modoTeste) {
+        pesquisar20AleatoriasSI(nomeArquivo, quantidade);
+        return;
+    }
+
+    // print opcional das chaves
+    if (imprimirChaves) {
+        printf("\nchaves do arquivo:\n");
+        FILE *arquivo = fopen(nomeArquivo, "rb");
+        TipoItem item;
+        int count = 0;
+        while (count < quantidade && fread(&item, sizeof(TipoItem), 1, arquivo) == 1) {
+            printf("%d ", item.chave);
+            if ((count + 1) % 10 == 0) printf("\n");
+            count++;
+        }
+        printf("\n");
+        fclose(arquivo);
+    }
+
+    // inicio da busca normal
+    printf("\npesquisando chave %d...\n", chave);
+
+    long transferencias = 0;
+    long comp = 0;
+    double tempo = 0;
+    TipoItem resultado;
+    int encontrado = 0;
+
+    // processamento principal
+    lerArquivoSequencial(nomeArquivo, quantidade, chave, &transferencias, &comp, &tempo, &resultado, &encontrado);
+
+    //  prints 
+    if (encontrado) {
+        printf("chave encontrada\n");
+        printf("chave: %d | dado1: %ld | dado2: %.50s\n", resultado.chave, resultado.dado1, resultado.dado2);
+    } else {
+        printf("chave nao encontrada\n");
+    }
+
+    // conclusao 
+    printf("transferencias: %ld | comparacoes: %ld | tempo: %.6f s\n", transferencias, comp, tempo);
+
 }

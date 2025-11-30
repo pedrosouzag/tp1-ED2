@@ -3,6 +3,7 @@
 #include <time.h>
 
 #include "arvoreb.h"
+#include "registro.h"
 
 Registro* pesquisa(Pagina *pagina, int chave, long *comp) {
     int i;
@@ -223,9 +224,63 @@ void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *ra
     fim = clock();
     double tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
     
-    printf("Pesquisas: 20 | Comparacões totais: %ld | Media: %.2f | Tempo: %.6f s\n",
-           compTotal, compTotal/20.0, tempo);
+    printf("Pesquisas: 20 | Comparacões totais: %ld | Tempo: %.6f s\n", compTotal, tempo);
 }
+
+void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves) {
+
+    Pagina *raiz = NULL;
+    long transferencias = 0;
+    long compConstrucao = 0;
+    double tempoConstrucao = 0;
+
+    // imprime todas as chaves do arquivo se solicitado
+    if (imprimirChaves) {
+        printf("\nchaves do arquivo:\n");
+
+        FILE *arquivo = fopen(nomeArquivo, "rb");
+        Registro reg;
+        int contador = 0;
+
+        while (contador < quantidade && fread(&reg, sizeof(Registro), 1, arquivo) == 1) {
+            printf("%d ", reg.chave);
+            if ((contador + 1) % 10 == 0) printf("\n");
+            contador++;
+        }
+
+        printf("\n");
+        fclose(arquivo);
+    }
+
+
+    // construcao da arvore B
+    lerArquivoArvoreB(nomeArquivo, quantidade, &raiz, &transferencias, &compConstrucao, &tempoConstrucao);
+
+    // modo teste -T
+    if (modoTeste) {
+        pesquisar20Aleatorias(nomeArquivo, quantidade, raiz);
+        return;
+    }
+
+    // busca normal
+    printf("\npesquisando chave %d...\n", chave);
+
+    long compBusca = 0;
+    Registro *resultado = pesquisa(raiz, chave, &compBusca);
+
+    long compTotal = compConstrucao + compBusca;
+
+    if (resultado != NULL) {
+        printf("chave encontrada\n");
+        printf("chave: %d | dado1: %ld | dado2: %.50s\n", resultado->chave, resultado->dado1, resultado->dado2);
+    } else {
+        printf("chave nao encontrada\n");
+    }
+
+    // estatisticas finais
+    printf("transferencias: %ld | comparacoes: %ld | tempo: %.6f s\n", transferencias, compTotal, tempoConstrucao);
+}
+
 
     
 

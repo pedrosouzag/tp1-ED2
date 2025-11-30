@@ -24,5 +24,6 @@ void lerArquivoArvoreBinaria(const char *nomeArquivoDados, const char *nomeArqui
                              int numRegistros, long *transferencias, long *comp, double *tempo);
 
 void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArquivoArvore, int numRegistros);
+void executarArvoreBinaria(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves);
 
 #endif
