@@ -14,7 +14,7 @@ typedef struct {
 typedef struct {
     int chave;
     long int dado1;
-    char dado2[5001];
+    char dado2[5000];
 } TipoItem;
 
 // Definicao de uma pagina (bloco de registros)

@@ -178,11 +178,11 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
 void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
     FILE *arquivo = fopen(nomeArquivo, "rb");
     if (!arquivo) {
-        printf("Erro ao abrir arquivo\n");
+        printf("erro ao abrir arquivo\n");
         return;
     }
-    
-    //passa  todas as chaves do arquivo para esse vetor
+
+    // pega todas as chaves do arquivo
     int *chaves = (int *)malloc(quantidade * sizeof(int));
     TipoItem item;
     for (int i = 0; i < quantidade; i++) {
@@ -190,8 +190,8 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
         chaves[i] = item.chave;
     }
     fclose(arquivo);
-    
-    // Embaralha
+
+    // embaralha as chaves
     srand(time(NULL));
     for (int i = quantidade - 1; i > 0; i--) {
         int j = rand() % (i + 1);
@@ -199,29 +199,46 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
         chaves[i] = chaves[j];
         chaves[j] = temp;
     }
-    
+
     long compTotal = 0;
+    long transfTotal = 0;
     clock_t inicio = clock();
-    
+
+    printf("\niniciando pesquisa de 20 chaves aleatorias\n");
+
     for (int i = 0; i < 20; i++) {
         int chaveAtual = chaves[i];
-        long transf, comp;
-        double tempo;
+        long transf = 0;
+        long comp = 0;
+        double tempo = 0;
         TipoItem resultado;
-        int encontrado;
-        
+        int encontrado = 0;
+
+        // executa a busca
         lerArquivoSequencial(nomeArquivo, quantidade, chaveAtual, &transf, &comp, &tempo, &resultado, &encontrado);
-        
+
+        // mostra o resultado da busca
+        if (encontrado) {
+            printf("chave buscada: %d | encontrada | transferencias: %ld | comp: %ld | tempo: %.6f s\n",
+                   chaveAtual, transf, comp, tempo);
+        } else {
+            printf("chave buscada: %d | nao encontrada | transferencias: %ld | comp: %ld | tempo: %.6f s\n",
+                   chaveAtual, transf, comp, tempo);
+        }
+
         compTotal += comp;
+        transfTotal += transf;
     }
-    
+
     clock_t fim = clock();
     double tempoTotal = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    
-    printf("Pesquisas: 20 | comp totais: %ld | Tempo: %.6f s\n", compTotal, tempoTotal);
-    
+
+    printf("\npesquisas: 20 | comp totais: %ld | transf totais: %ld | tempo total: %.6f s\n",
+           compTotal, transfTotal, tempoTotal);
+
     free(chaves);
 }
+
 
 void executarSequencial(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves) {
 
