@@ -6,7 +6,9 @@
 #include "acessoSequencial.h"
 
 //funcao auxiliar para criar o indice de paginas
-int criarIndicePaginas(const char *nomeArquivo, TipoIndice tabela[],  int numRegistros, long *transferencias) {
+int criarIndicePaginas(const char *nomeArquivo, TipoIndice tabela[],  int numRegistros, long *transferencias, double *tempoCriacao) {
+    double inicio = now_seconds();
+    
     FILE *arquivo = fopen(nomeArquivo, "rb");
     if (!arquivo) {
         printf ("Erro ao abrir arquivo");
@@ -30,6 +32,10 @@ int criarIndicePaginas(const char *nomeArquivo, TipoIndice tabela[],  int numReg
     }
     
     fclose(arquivo);
+    
+    double fim = now_seconds();
+    *tempoCriacao = (fim - inicio);
+    
     return numPaginas;
 }
 
@@ -126,37 +132,38 @@ int buscarNaPagina(int chave, PaginaAS *pag, long *comp, TipoItem *resultado) {
 
 
 //funcao principal
-void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, long *transferencias, long *comp, double *tempo, TipoItem *resultado, int *encontrado) {
-   double inicio = now_seconds();
+void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, long *transferencias, long *comp, double *tempo, TipoItem *resultado, int *encontrado, TipoIndice *tabelaIndice, int numPaginas) {
+    double inicio = now_seconds();
     
     *transferencias = 0;
     *comp = 0;
     *encontrado = 0;
     
-    int numPaginas = (quantidade + ITENSPAGINA - 1) / ITENSPAGINA;
-    TipoIndice *tabelaIndice = (TipoIndice *)malloc(numPaginas * sizeof(TipoIndice));
-    if (!tabelaIndice) {
-        return;
+    TipoIndice *indiceLocal = tabelaIndice;
+    int paginasLocal = numPaginas;
+    int criadoAgora = 0;
+    
+    // cria o vetor em casa de testo manual 
+    if (indiceLocal == NULL) {
+        paginasLocal = (quantidade + ITENSPAGINA - 1) / ITENSPAGINA;
+        indiceLocal = (TipoIndice *)malloc(paginasLocal * sizeof(TipoIndice));
+        if (!indiceLocal) return;
+        
+        long transfIndice = 0;
+        double tempoCriacaoIndice = 0;
+        paginasLocal = criarIndicePaginas(nomeArquivo, indiceLocal, quantidade, &transfIndice, &tempoCriacaoIndice);
+        if (paginasLocal == 0) {
+            free(indiceLocal);
+            return;
+        }
+        *transferencias += transfIndice;
+        printf("Tempo para criacao do indice: %.3lf segundos\n", tempoCriacaoIndice);
+        criadoAgora = 1;
     }
-    
-    //cria o indice de paginas
-    long transfIndice = 0;
-    int paginasCriadas = criarIndicePaginas(nomeArquivo, tabelaIndice, quantidade, &transfIndice);
-    if (paginasCriadas == 0) return; // vai retornar zero caso o arquivo nao exista 
-    
-    *transferencias += transfIndice;
-    // tempo para criacao do indice de paginas
-    double fim = now_seconds();
-    *tempo = ((double)(fim - inicio));
-    printf ("Tempo para criacao do indice: %.3lf segundos\n", *tempo);
-
-    // marcar agora o tempo de pesquisa
-    *tempo = 0;
-    inicio = now_seconds();
     
     //busca no indice
     long compIndice = 0;
-    int numPaginaAlvo = buscarPaginaNoIndice(chave, tabelaIndice, numPaginas, &compIndice);
+    int numPaginaAlvo = buscarPaginaNoIndice(chave, indiceLocal, paginasLocal, &compIndice);
     *comp += compIndice;
     
     //carrega a pagina e busca
@@ -175,11 +182,13 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
         printf ("Pagina alvo nao encontrada");
     }
     
-    free(tabelaIndice);
-
-    fim = now_seconds();
-    *tempo = ((double)(fim - inicio));
+    // Libera apenas se criou agora
+    if (criadoAgora) {
+        free(indiceLocal);
+    }
     
+    double fim = now_seconds();
+    *tempo = ((double)(fim - inicio));
 }
 
 //funcao para teste com 20 chaves aleatorias
@@ -208,9 +217,29 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
         chaves[j] = temp;
     }
 
+    // cria indice uma vez e marca o tempo
+    int numPaginas = (quantidade + ITENSPAGINA - 1) / ITENSPAGINA;
+    TipoIndice *tabelaIndice = (TipoIndice *)malloc(numPaginas * sizeof(TipoIndice));
+    if (!tabelaIndice) {
+        free(chaves);
+        return;
+    }
+    
+    long transfIndice = 0;
+    double tempoCriacaoIndice = 0;
+    numPaginas = criarIndicePaginas(nomeArquivo, tabelaIndice, quantidade, &transfIndice, &tempoCriacaoIndice);
+    
+    if (numPaginas == 0) {
+        free(chaves);
+        free(tabelaIndice);
+        return;
+    }
+    
+    printf("\nindice criado: %d paginas | tempo criacao indice: %.3f s | transf: %ld\n", numPaginas, tempoCriacaoIndice, transfIndice);
+
     long compTotal = 0;
     long transfTotal = 0;
-    double inicio = now_seconds();
+    double tempoPesquisaTotal = 0.0;
 
     printf("\niniciando pesquisa de 20 chaves aleatorias\n");
 
@@ -222,8 +251,8 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
         TipoItem resultado;
         int encontrado = 0;
 
-        // executa a busca
-        lerArquivoSequencial(nomeArquivo, quantidade, chaveAtual, &transf, &comp, &tempo, &resultado, &encontrado);
+        // executa a busca passando o indice
+        lerArquivoSequencial(nomeArquivo, quantidade, chaveAtual, &transf, &comp, &tempo, &resultado, &encontrado, tabelaIndice, numPaginas);
 
         // mostra o resultado da busca
         if (encontrado) {
@@ -236,15 +265,17 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
 
         compTotal += comp;
         transfTotal += transf;
+        tempoPesquisaTotal += tempo;
     }
 
-    double fim = now_seconds();
-    double tempoTotal = ((double)(fim - inicio));
-
-    printf("\npesquisas: 20 | comp totais: %ld | transf totais: %ld | tempo total: %.3f s\n",
-           compTotal, transfTotal, tempoTotal);
+    printf("\n=== RESULTADOS ===\n");
+    printf("tempo criacao indice: %.3f s | transf indice: %ld\n", tempoCriacaoIndice, transfIndice);
+    printf("pesquisas: 20 | comp totais: %ld | transf totais: %ld | tempo pesquisa: %.3f s\n",
+           compTotal, transfTotal, tempoPesquisaTotal);
+    printf("tempo TOTAL: %.3f s\n", tempoCriacaoIndice + tempoPesquisaTotal);
 
     free(chaves);
+    free(tabelaIndice);
 }
 
 
@@ -280,8 +311,8 @@ void executarSequencial(const char *nomeArquivo, int quantidade, int chave, int 
     TipoItem resultado;
     int encontrado = 0;
 
-    // processamento principal
-    lerArquivoSequencial(nomeArquivo, quantidade, chave, &transferencias, &comp, &tempo, &resultado, &encontrado);
+    // processamento principal - passa NULL para criar indice internamente
+    lerArquivoSequencial(nomeArquivo, quantidade, chave, &transferencias, &comp, &tempo, &resultado, &encontrado, NULL, 0);
 
     //  prints 
     if (encontrado) {

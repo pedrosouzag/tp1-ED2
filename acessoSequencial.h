@@ -24,14 +24,18 @@ typedef struct {
     int numItens;  // quantos itens estao realmente na pagina
 } PaginaAS;
 
-// Funcao principal que carrega o indice e faz a busca
-void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave,
-                          long *transferencias, long *comp, 
-                          double *tempo, TipoItem *resultado, int *encontrado);
+// Funções auxiliares
+int criarIndicePaginas(const char *nomeArquivo, TipoIndice tabela[], int numRegistros, long *transferencias, double *tempoCriacao);
+int buscarPaginaNoIndice(int chave, TipoIndice tabela[], int numPaginas, long *comp);
+int buscarPaginaNoIndiceBinario(int chave, TipoIndice tabela[], int numPaginas, long *comp);
+int carregarPagina(const char *nomeArquivo, int numPagina, PaginaAS *paginaAlvo, int numRegistros, long *transferencias);
+int buscarNaPagina(int chave, PaginaAS *pag, long *comp, TipoItem *resultado);
 
-// Funcao para teste com 20 chaves aleatorias
+// Função principal de busca sequencial indexada
+void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, long *transferencias, long *comp, double *tempo, TipoItem *resultado, int *encontrado, TipoIndice *tabelaIndice, int numPaginas);
+
+// Funções para testes
 void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade);
-
 void executarSequencial(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves);
 
 #endif
