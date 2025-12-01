@@ -236,7 +236,7 @@ void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArqui
     fim = now_seconds();
     double tempo = ((double)(fim - inicio));
 
-    printf("pesquisas: 20 | comparacoes totais: %ld | transferencias: %ld | tempo: %.6f s\n", compTotal, transTotal, tempo);
+    printf("pesquisas: 20 | comparacoes totais: %ld | transferencias: %ld | tempo de pesquisa: %.3f s\n", compTotal, transTotal, tempo);
 }
 
 void executarArvoreBinaria(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves) {
@@ -245,11 +245,12 @@ void executarArvoreBinaria(const char *nomeArquivo, int quantidade, int chave, i
 
     long transferencias = 0;
     long comp = 0;
-    double tempo = 0;
+    double tempoCriacao = 0, tempoPesquisa = 0;
 
     // modo teste -T : constroi arvore e faz 20 buscas aleatorias
     if (modoTeste) {
-        lerArquivoBinario(nomeArquivo, arquivoArvore, quantidade, &transferencias, &comp, &tempo);
+        lerArquivoBinario(nomeArquivo, arquivoArvore, quantidade, &transferencias, &comp, &tempoCriacao);
+        printf ("Tempo para construir arvore : %.3lf\n" , tempoCriacao);
         pesquisar20AleatoriasAB(nomeArquivo, arquivoArvore, quantidade);
         return;
     }
@@ -270,14 +271,19 @@ void executarArvoreBinaria(const char *nomeArquivo, int quantidade, int chave, i
     }
 
     // construindo a arvore
-    lerArquivoBinario(nomeArquivo, arquivoArvore, quantidade, &transferencias, &comp, &tempo);
+    lerArquivoBinario(nomeArquivo, arquivoArvore, quantidade, &transferencias, &comp, &tempoCriacao);
 
     // busca normal
     printf("\npesquisando chave %d...\n", chave);
 
+    // pasando variveis de comp, transferencias e marcando o tempo
     long compBusca = 0;
     long transfBusca = 0;
+    double incio = now_seconds();
     Registro *resultado = buscarEmArquivo(arquivoArvore, chave, &compBusca, &transfBusca);
+    double fim = now_seconds();
+
+    tempoPesquisa = incio - fim;
 
     // somar os valores da busca aos totais
     transferencias += transfBusca;
@@ -292,7 +298,7 @@ void executarArvoreBinaria(const char *nomeArquivo, int quantidade, int chave, i
     }
 
     // estatisticas 
-    printf("transferencias: %ld | comparacoes: %ld | tempo: %.6f s\n", transferencias, comp, tempo);
+    printf("transferencias: %ld | comparacoes: %ld | tempo de criacao: %.3f s | tempo de pesquisa : %.3f s \n", transferencias, comp, tempoCriacao, tempoPesquisa);
 }
 
 
