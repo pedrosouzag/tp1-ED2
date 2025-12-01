@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
 
         // se houver -p, imprime as chaves antes da pesquisa
         if (argc == 6) {
-            if (strcmp(argv[5], "-p") == 0) {
+            if (strcmp(argv[5], "[-p]") == 0) {
                 imprimirChaves = 1;
             }
         }
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
         printf("situacao invalida\n");
         return 1;
     }
-    printf("Teste com %d registros", quantidade);
+    printf("Teste com %d registros\n", quantidade);
     // escolhe o metodo usando switch
     switch (metodo) {
 
