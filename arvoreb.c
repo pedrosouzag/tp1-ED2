@@ -263,7 +263,8 @@ void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int mod
     // modo teste -T
     if (modoTeste) {
         pesquisar20Aleatorias(nomeArquivo, quantidade, raiz);
-        printf ("Tempo de construcao da arvore : %.3f s ", tempoConstrucao);
+        printf ("Tempo de construcao da arvore : %.3f s \n", tempoConstrucao);
+        printf ("Transferencias para construcao: %ld\n", transferencias);
         return;
     }
 
