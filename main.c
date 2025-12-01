@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
         printf("situacao invalida\n");
         return 1;
     }
-
+    printf("Teste com %d registros", quantidade);
     // escolhe o metodo usando switch
     switch (metodo) {
 

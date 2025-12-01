@@ -1,5 +1,6 @@
 #ifndef ACESSOSEQUENCIAL_H
 #define ACESSOSEQUENCIAL_H
+#include "tempo.h"
 
 #define ITENSPAGINA 4
 #define MAXTABELA 100

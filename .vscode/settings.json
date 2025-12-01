@@ -3,6 +3,7 @@
         "arvoreb.h": "c",
         "stdlib.h": "c",
         "stdio.h": "c",
-        "acessosequencial.h": "c"
+        "acessosequencial.h": "c",
+        "time.h": "c"
     }
 }

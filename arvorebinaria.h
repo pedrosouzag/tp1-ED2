@@ -1,6 +1,7 @@
 #ifndef ARVOREBINARIA_H
 #define ARVOREBINARIA_H
 #include "registro.h"
+#include "tempo.h"
 
 /*typedef struct {
     int chave;

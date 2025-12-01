@@ -160,7 +160,7 @@ void lerArquivoBinario(const char *nomeArquivoDados, const char *nomeArquivoArvo
 
     Registro reg;
     int registrosLidos = 0;
-    clock_t inicio, fim;
+    double inicio, fim;
 
     // cria a arvore vazia
     criarArvoreBinaria(nomeArquivoArvore);
@@ -171,7 +171,7 @@ void lerArquivoBinario(const char *nomeArquivoDados, const char *nomeArquivoArvo
     printf("lendo %d registros de %s construindo arvore em %s\n",
            numRegistros, nomeArquivoDados, nomeArquivoArvore);
 
-    inicio = clock();
+    inicio = now_seconds();
 
     // le os registros e insere na arvore
     while(registrosLidos < numRegistros && fread(&reg, sizeof(Registro), 1, arquivo) == 1){
@@ -184,8 +184,8 @@ void lerArquivoBinario(const char *nomeArquivoDados, const char *nomeArquivoArvo
         registrosLidos++;
     }
 
-    fim = clock();
-    *tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    fim = now_seconds();
+    *tempo = ((double)(fim - inicio));
 
     fclose(arquivo);
 }
@@ -198,12 +198,12 @@ void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArqui
     long transTotal = 0;
     long compTotal = 0;
 
-    clock_t inicio, fim;
+    double inicio, fim;
 
     printf("pesquisando 20 chaves aleatorias\n");
 
     srand(time(NULL));
-    inicio = clock();
+    inicio = now_seconds();
 
     for(int i = 0; i < 20; i++){
         // escolhe uma posicao aleatoria do arquivo de dados
@@ -233,8 +233,8 @@ void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArqui
         }
     }
 
-    fim = clock();
-    double tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    fim = now_seconds();
+    double tempo = ((double)(fim - inicio));
 
     printf("pesquisas: 20 | comparacoes totais: %ld | transferencias: %ld | tempo: %.6f s\n", compTotal, transTotal, tempo);
 }

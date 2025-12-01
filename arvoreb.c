@@ -157,7 +157,7 @@ void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz,
     FILE *arquivo;
     Registro reg;
     int registrosLidos = 0;
-    clock_t inicio, fim;
+    double inicio, fim;
     
     arquivo = fopen(nomeArquivo, "rb");
     if (arquivo == NULL) {
@@ -171,7 +171,7 @@ void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz,
     
     printf("Lendo %d registros de %s...\n", numRegistros, nomeArquivo);
     
-    inicio = clock();
+    inicio = now_seconds();
     
     // Lê registro, insere, lê registro, insere...
     while (registrosLidos < numRegistros && fread(&reg, sizeof(Registro), 1, arquivo) == 1) {
@@ -180,8 +180,8 @@ void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz,
         registrosLidos++;
     }
     
-    fim = clock();
-    *tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    fim = now_seconds();
+    *tempo = ((double)(fim - inicio));
     
     fclose(arquivo);
     
@@ -195,12 +195,12 @@ void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *ra
     FILE *arquivo;
     Registro reg;
     long compTotal = 0;
-    clock_t inicio, fim;
+    double inicio, fim;
     
     printf("\n=== PESQUISANDO 20 CHAVES ALEAToRIAS ===\n");
     
     srand(time(NULL));
-    inicio = clock();
+    inicio = now_seconds();
     
     for (int i = 0; i < 20; i++) {
         int posicao = rand() % numRegistros;
@@ -211,18 +211,23 @@ void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *ra
         fread(&reg, sizeof(Registro), 1, arquivo);
         fclose(arquivo);
         
+       //printf("Pegando chave do arquivo na posicao %d...\n", posicao);
+        //printf("Chave lida = %d\n", reg.chave);
+
         // Pesquisa a chave
         long comp = 0;
         Registro *resultado = pesquisa(raiz, reg.chave, &comp);
         compTotal += comp;
         
         if (resultado == NULL) {
-            printf("ERRO: Chave %d (pos %d) nao encontrada!\n", reg.chave, posicao);
+            printf("Chave %d  nao encontrada | comps: %ld\n", reg.chave, comp);
+        } else {
+            printf("Chave %d encontrada | comps: %ld\n", reg.chave, comp);
         }
     }
     
-    fim = clock();
-    double tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    fim = now_seconds();
+    double tempo = ((double)(fim - inicio));
     
     printf("Pesquisas: 20 | Comparacões totais: %ld | Tempo: %.6f s\n", compTotal, tempo);
 }

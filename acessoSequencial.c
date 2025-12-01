@@ -127,7 +127,7 @@ int buscarNaPagina(int chave, PaginaAS *pag, long *comp, TipoItem *resultado) {
 
 //funcao principal
 void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, long *transferencias, long *comp, double *tempo, TipoItem *resultado, int *encontrado) {
-    clock_t inicio = clock();
+   double inicio = now_seconds();
     
     *transferencias = 0;
     *comp = 0;
@@ -168,9 +168,9 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
     }
     
     free(tabelaIndice);
-    
-    clock_t fim = clock();
-    *tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+
+    double fim = now_seconds();
+    *tempo = ((double)(fim - inicio));
     
 }
 
@@ -202,7 +202,7 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
 
     long compTotal = 0;
     long transfTotal = 0;
-    clock_t inicio = clock();
+    double inicio = now_seconds();
 
     printf("\niniciando pesquisa de 20 chaves aleatorias\n");
 
@@ -230,8 +230,8 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
         transfTotal += transf;
     }
 
-    clock_t fim = clock();
-    double tempoTotal = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    double fim = now_seconds();
+    double tempoTotal = ((double)(fim - inicio));
 
     printf("\npesquisas: 20 | comp totais: %ld | transf totais: %ld | tempo total: %.6f s\n",
            compTotal, transfTotal, tempoTotal);
