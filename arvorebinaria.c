@@ -226,12 +226,14 @@ void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArqui
 
         // libera memoria se achou
         if(resultado != NULL){
+            printf("chave %d (pos %d) encontrada | transf: %ld | comp: %ld\n", reg.chave, posicao, transf, comp);
             free(resultado);
         }
         else{
-            printf("chave %d (pos %d) nao encontrada\n", reg.chave, posicao);
+            printf("chave %d (pos %d) nao encontrada | transf: %ld | comp: %ld\n", reg.chave, posicao, transf, comp);
         }
     }
+
 
     fim = now_seconds();
     double tempo = ((double)(fim - inicio));
