@@ -57,7 +57,7 @@ void InsereNaPagina(Pagina *ap, Registro Reg, Pagina *apDir){
 }
 
 void Ins (Registro reg, Pagina *ap, short *cresceu, Registro *regRetorno, Pagina **apRetorno, long *comp){
-    int i = 1, j;
+    int i = 0, j;  // COMEÇA EM 0
     Pagina *apTemp;
 
     // caso base recursao, chegou na posicao de insercao, devolve a chave para cima
@@ -69,24 +69,21 @@ void Ins (Registro reg, Pagina *ap, short *cresceu, Registro *regRetorno, Pagina
     }
 
     // procura a posicao onde o registro deve ser inserido dentro da pagina 
-    while (i < ap->n && reg.chave > ap->registro[i - 1].chave){
+    while (i < ap->n && reg.chave > ap->registro[i].chave){
         (*comp)++;
         i++;
     }
 
     // em caso de chave duplicada, nao insere
-    (*comp)++;
-    if (reg.chave == ap->registro[i - 1].chave) {
+    if (i < ap->n && reg.chave == ap->registro[i].chave) {
+        (*comp)++;
         printf("Erro: Registro ja esta presente\n");
         *cresceu = FALSE;
         return;
     }
-    // decidir qual chave da sub arvore descer
-    (*comp)++;
-    if (reg.chave < ap->registro[i - 1].chave) i--;
 
     // chama a recursao
-    Ins (reg, ap->filhos[i - 1], cresceu, regRetorno, apRetorno, comp);
+    Ins (reg, ap->filhos[i], cresceu, regRetorno, apRetorno, comp);
 
     if (!*cresceu) return; // nada subiu nao precisa mexer na pagina
 
@@ -128,8 +125,6 @@ void Ins (Registro reg, Pagina *ap, short *cresceu, Registro *regRetorno, Pagina
     // chave do meio  promovida para o nivel superior
     *regRetorno = ap->registro[ORDEM];  // chave que sobe
     *apRetorno  = apTemp;                // ponteiro para a nova pagina a direita
-
-
 }
 
 void Insere(Registro reg, Pagina **ap, long *comp) {
@@ -195,6 +190,7 @@ void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *ra
     FILE *arquivo;
     Registro reg;
     long compTotal = 0;
+    long transferencias = 0;
     double inicio, fim;
     
     printf("\n=== PESQUISANDO 20 CHAVES ALEAToRIAS ===\n");
@@ -209,6 +205,7 @@ void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *ra
         arquivo = fopen(nomeArquivo, "rb");
         fseek(arquivo, posicao * sizeof(Registro), SEEK_SET);
         fread(&reg, sizeof(Registro), 1, arquivo);
+        transferencias++;
         fclose(arquivo);
         
        //printf("Pegando chave do arquivo na posicao %d...\n", posicao);
@@ -229,7 +226,7 @@ void pesquisar20Aleatorias(const char *nomeArquivo, int numRegistros, Pagina *ra
     fim = now_seconds();
     double tempo = ((double)(fim - inicio));
     
-    printf("Pesquisas: 20 | Comparacões totais: %ld | Tempo: %.6f s\n", compTotal, tempo);
+    printf("Pesquisas: 20 | Transferências: %ld | Comparações totais: %ld | Tempo: %.6f s\n",  transferencias, compTotal, tempo);
 }
 
 void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves) {
@@ -312,7 +309,6 @@ void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int mod
 
 
     
-
 
 
 
