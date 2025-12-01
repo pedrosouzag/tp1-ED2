@@ -145,6 +145,14 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
     if (paginasCriadas == 0) return; // vai retornar zero caso o arquivo nao exista 
     
     *transferencias += transfIndice;
+    // tempo para criacao do indice de paginas
+    double fim = now_seconds();
+    *tempo = ((double)(fim - inicio));
+    printf ("Tempo para criacao do indice: %.3lf segundos\n", *tempo);
+
+    // marcar agora o tempo de pesquisa
+    *tempo = 0;
+    inicio = now_seconds();
     
     //busca no indice
     long compIndice = 0;
@@ -169,7 +177,7 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
     
     free(tabelaIndice);
 
-    double fim = now_seconds();
+    fim = now_seconds();
     *tempo = ((double)(fim - inicio));
     
 }
@@ -219,10 +227,10 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
 
         // mostra o resultado da busca
         if (encontrado) {
-            printf("chave buscada: %d | encontrada | transferencias: %ld | comp: %ld | tempo: %.6f s\n",
+            printf("chave buscada: %d | encontrada | transferencias: %ld | comp: %ld | tempo: %.3f s\n",
                    chaveAtual, transf, comp, tempo);
         } else {
-            printf("chave buscada: %d | nao encontrada | transferencias: %ld | comp: %ld | tempo: %.6f s\n",
+            printf("chave buscada: %d | nao encontrada | transferencias: %ld | comp: %ld | tempo: %.3f s\n",
                    chaveAtual, transf, comp, tempo);
         }
 
@@ -233,7 +241,7 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
     double fim = now_seconds();
     double tempoTotal = ((double)(fim - inicio));
 
-    printf("\npesquisas: 20 | comp totais: %ld | transf totais: %ld | tempo total: %.6f s\n",
+    printf("\npesquisas: 20 | comp totais: %ld | transf totais: %ld | tempo total: %.3f s\n",
            compTotal, transfTotal, tempoTotal);
 
     free(chaves);
@@ -284,6 +292,6 @@ void executarSequencial(const char *nomeArquivo, int quantidade, int chave, int 
     }
 
     // conclusao 
-    printf("transferencias: %ld | comparacoes: %ld | tempo: %.6f s\n", transferencias, comp, tempo);
+    printf("transferencias: %ld | comparacoes: %ld | tempo: %.3f s\n", transferencias, comp, tempo);
 
 }

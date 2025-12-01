@@ -172,6 +172,7 @@ void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz,
     while (registrosLidos < numRegistros && fread(&reg, sizeof(Registro), 1, arquivo) == 1) {
         (*transferencias)++;
         Insere(reg, raiz, comp);
+        //printf("Debug\n");
         registrosLidos++;
     }
     
@@ -235,6 +236,7 @@ void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int mod
     long transferencias = 0;
     long compConstrucao = 0;
     double tempoConstrucao = 0;
+    double tempoBusca = 0, inicio = 0, fim = 0;
 
     // imprime todas as chaves do arquivo se solicitado
     if (imprimirChaves) {
@@ -261,6 +263,7 @@ void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int mod
     // modo teste -T
     if (modoTeste) {
         pesquisar20Aleatorias(nomeArquivo, quantidade, raiz);
+        printf ("Tempo de construcao da arvore : %.3f s ", tempoConstrucao);
         return;
     }
 
@@ -268,7 +271,10 @@ void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int mod
     printf("\npesquisando chave %d...\n", chave);
 
     long compBusca = 0;
+    inicio = now_seconds();
     Registro *resultado = pesquisa(raiz, chave, &compBusca);
+    fim = now_seconds();
+    tempoBusca = inicio - fim;
 
     long compTotal = compConstrucao + compBusca;
 
@@ -280,7 +286,7 @@ void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int mod
     }
 
     // estatisticas finais
-    printf("transferencias: %ld | comparacoes: %ld | tempo: %.6f s\n", transferencias, compTotal, tempoConstrucao);
+    printf("transferencias: %ld | comparacoes: %ld | tempo de construcao: %.3f s | tempo busca: %.3lf s n", transferencias, compTotal, tempoConstrucao, tempoBusca);
 }
 
 

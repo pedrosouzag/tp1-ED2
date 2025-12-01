@@ -6,8 +6,8 @@
 #define TRUE 1
 #define FALSE 0
 
-#define ORDEM 3// fica a criterio para trocar
-#define MM 2 * ORDEM
+#define ORDEM 200// fica a criterio para trocar
+#define MM 2 * ORDEM 
 
 typedef struct pagina {
     int n;
