@@ -11,7 +11,7 @@ Registro* pesquisa(Pagina *pagina, int chave, long *comp) {
     while (pagina != NULL) {
         i = 0;
 
-          // percorre os itens da pagina at achar posicao
+          // percorre os itens da pagina ate achar posicao
         while (i < pagina->n && chave > pagina->registro[i].chave) {
             i++;
             (*comp)++;
@@ -29,7 +29,7 @@ Registro* pesquisa(Pagina *pagina, int chave, long *comp) {
     return NULL;
 }
 
-// Insere o registro e o ponteiro apDir dentro da pagina ap
+// insere o registro e o ponteiro apDir dentro da pagina ap
 
 void InsereNaPagina(Pagina *ap, Registro Reg, Pagina *apDir){
     int k = ap->n;
@@ -168,7 +168,7 @@ void lerArquivoArvoreB(const char *nomeArquivo, int numRegistros, Pagina **raiz,
     
     inicio = now_seconds();
     
-    // Lê registro, insere, lê registro, insere...
+    // le registro, insere, le registro, insere...
     while (registrosLidos < numRegistros && fread(&reg, sizeof(Registro), 1, arquivo) == 1) {
         (*transferencias)++;
         Insere(reg, raiz, comp);
@@ -275,7 +275,7 @@ void executarArvoreB(const char *nomeArquivo, int quantidade, int chave, int mod
     inicio = now_seconds();
     Registro *resultado = pesquisa(raiz, chave, &compBusca);
     fim = now_seconds();
-    tempoBusca = inicio - fim;
+    tempoBusca = fim - inicio;
 
     long compTotal = compConstrucao + compBusca;
 

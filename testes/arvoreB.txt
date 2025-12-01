@@ -1,0 +1,140 @@
+Teste com 100 registros
+Lendo 100 registros de registros_mix-003.bin...
+Concluido! Arquivo: registros_mix-003.bin | Registros: 100 | Transferências: 100 | Comparacões: 2452 | Tempo: 0.001120 s
+
+=== PESQUISANDO 20 CHAVES ALEAToRIAS ===
+Chave 67464 encontrada | comps: 7
+Chave 1185200 encontrada | comps: 60
+Chave 1097212 encontrada | comps: 57
+Chave 871175 encontrada | comps: 45
+Chave 1883730 encontrada | comps: 91
+Chave 1883730 encontrada | comps: 91
+Chave 1883730 encontrada | comps: 91
+Chave 1017424 encontrada | comps: 51
+Chave 1734048 encontrada | comps: 82
+Chave 1363569 encontrada | comps: 70
+Chave 135513 encontrada | comps: 11
+Chave 1436046 encontrada | comps: 73
+Chave 220392 encontrada | comps: 14
+Chave 631687 encontrada | comps: 33
+Chave 1955309 encontrada | comps: 97
+Chave 1201900 encontrada | comps: 62
+Chave 1734048 encontrada | comps: 82
+Chave 1840347 encontrada | comps: 89
+Chave 1995916 encontrada | comps: 99
+Chave 1166960 encontrada | comps: 59
+Pesquisas: 20 | Transferências: 20 | Comparações totais: 1264 | Tempo: 0.000644 s
+Tempo de construcao da arvore : 0.001 s
+Transferencias para construcao: 100
+Teste com 200 registros
+Lendo 200 registros de registros_mix-003.bin...
+Concluido! Arquivo: registros_mix-003.bin | Registros: 200 | Transferências: 200 | Comparacões: 6371 | Tempo: 0.002699 s
+
+=== PESQUISANDO 20 CHAVES ALEAToRIAS ===
+Chave 1434043 encontrada | comps: 41
+Chave 243690 encontrada | comps: 27
+Chave 316432 encontrada | comps: 33
+Chave 871175 encontrada | comps: 41
+Chave 1883730 encontrada | comps: 78
+Chave 1883730 encontrada | comps: 78
+Chave 1883730 encontrada | comps: 78
+Chave 1017424 encontrada | comps: 4
+Chave 1418072 encontrada | comps: 39
+Chave 1049187 encontrada | comps: 9
+Chave 120407 encontrada | comps: 17
+Chave 570886 encontrada | comps: 3
+Chave 1855942 encontrada | comps: 77
+Chave 631687 encontrada | comps: 15
+Chave 1955309 encontrada | comps: 87
+Chave 1650302 encontrada | comps: 58
+Chave 1734048 encontrada | comps: 63
+Chave 1945081 encontrada | comps: 85
+Chave 28185 encontrada | comps: 5
+Chave 613668 encontrada | comps: 11
+Pesquisas: 20 | Transferências: 20 | Comparações totais: 849 | Tempo: 0.000403 s
+Tempo de construcao da arvore : 0.003 s
+Transferencias para construcao: 200
+Teste com 2000 registros
+Lendo 2000 registros de registros_mix-003.bin...
+Concluido! Arquivo: registros_mix-003.bin | Registros: 2000 | Transferências: 2000 | Comparacões: 83743 | Tempo: 0.045291 s
+
+=== PESQUISANDO 20 CHAVES ALEAToRIAS ===
+Chave 907440 encontrada | comps: 35
+Chave 780228 encontrada | comps: 13
+Chave 971931 encontrada | comps: 36
+Chave 531473 encontrada | comps: 65
+Chave 1591558 encontrada | comps: 45
+Chave 1883730 encontrada | comps: 118
+Chave 1591558 encontrada | comps: 45
+Chave 1017424 encontrada | comps: 28
+Chave 1262730 encontrada | comps: 47
+Chave 33621 encontrada | comps: 32
+Chave 357544 encontrada | comps: 28
+Chave 1816974 encontrada | comps: 50
+Chave 463910 encontrada | comps: 65
+Chave 267566 encontrada | comps: 19
+Chave 1447192 encontrada | comps: 24
+Chave 1301853 encontrada | comps: 81
+Chave 1734048 encontrada | comps: 38
+Chave 1599367 encontrada | comps: 56
+Chave 1354880 encontrada | comps: 74
+Chave 156120 encontrada | comps: 51
+Pesquisas: 20 | Transferências: 20 | Comparações totais: 950 | Tempo: 0.000238 s
+Tempo de construcao da arvore : 0.045 s
+Transferencias para construcao: 2000
+Teste com 20000 registros
+Lendo 20000 registros de registros_mix-003.bin...
+Concluido! Arquivo: registros_mix-003.bin | Registros: 20000 | Transferências: 20000 | Comparacões: 1338457 | Tempo: 0.518261 s
+
+=== PESQUISANDO 20 CHAVES ALEAToRIAS ===
+Chave 678073 encontrada | comps: 78
+Chave 655774 encontrada | comps: 92
+Chave 1112610 encontrada | comps: 28
+Chave 308804 encontrada | comps: 86
+Chave 1262448 encontrada | comps: 77
+Chave 805956 encontrada | comps: 48
+Chave 685734 encontrada | comps: 63
+Chave 1420444 encontrada | comps: 81
+Chave 1819521 encontrada | comps: 64
+Chave 1585040 encontrada | comps: 63
+Chave 34035 encontrada | comps: 89
+Chave 1639587 encontrada | comps: 38
+Chave 267629 encontrada | comps: 117
+Chave 912556 encontrada | comps: 78
+Chave 1963261 encontrada | comps: 70
+Chave 132322 encontrada | comps: 67
+Chave 1851003 encontrada | comps: 112
+Chave 352584 encontrada | comps: 106
+Chave 1901641 encontrada | comps: 69
+Chave 523445 encontrada | comps: 32
+Pesquisas: 20 | Transferências: 20 | Comparações totais: 1458 | Tempo: 0.000276 s
+Tempo de construcao da arvore : 0.518 s
+Transferencias para construcao: 20000
+Teste com 200000 registros
+Lendo 200000 registros de registros_mix-003.bin...
+Concluido! Arquivo: registros_mix-003.bin | Registros: 200000 | Transferências: 200000 | Comparacões: 16268329 | Tempo: 6.010317 s
+
+=== PESQUISANDO 20 CHAVES ALEAToRIAS ===
+Chave 1106810 encontrada | comps: 126
+Chave 1356857 encontrada | comps: 92
+Chave 1806944 encontrada | comps: 147
+Chave 1662109 encontrada | comps: 105
+Chave 154226 encontrada | comps: 102
+Chave 384970 encontrada | comps: 145
+Chave 1105482 encontrada | comps: 83
+Chave 467793 encontrada | comps: 101
+Chave 1068439 encontrada | comps: 102
+Chave 101005 encontrada | comps: 110
+Chave 587797 encontrada | comps: 26
+Chave 215127 encontrada | comps: 69
+Chave 1374798 encontrada | comps: 113
+Chave 1391796 encontrada | comps: 128
+Chave 1551543 encontrada | comps: 150
+Chave 302540 encontrada | comps: 144
+Chave 179366 encontrada | comps: 166
+Chave 995854 encontrada | comps: 114
+Chave 122086 encontrada | comps: 173
+Chave 622165 encontrada | comps: 104
+Pesquisas: 20 | Transferências: 20 | Comparações totais: 2300 | Tempo: 0.000983 s
+Tempo de construcao da arvore : 6.010 s
+Transferencias para construcao: 200000

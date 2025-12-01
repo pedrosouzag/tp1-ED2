@@ -5,6 +5,7 @@
 
 #include "acessoSequencial.h"
 #include "arvorebinaria.h"
+#include "arvorebestrela.h"
 #include "arvoreb.h"
 #include "registro.h"
 
@@ -61,7 +62,7 @@ int main(int argc, char *argv[]) {
         printf("situacao invalida\n");
         return 1;
     }
-    printf("Teste com %d registros\n", quantidade);
+    printf("\nTeste com %d registros\n", quantidade);
     // escolhe o metodo usando switch
     switch (metodo) {
 
@@ -82,7 +83,7 @@ int main(int argc, char *argv[]) {
 
         case 4:
             // metodo arvore b* (ainda nao implementado)
-            printf("metodo 4 (arvore b*) ainda nao implementado\n");
+            executarArvoreBEstrela(nomeArquivo, quantidade, chave, modoTeste, imprimirChaves);
             break;
 
         default:

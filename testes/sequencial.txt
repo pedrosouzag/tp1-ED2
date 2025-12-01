@@ -1,0 +1,672 @@
+comandos :
+
+
+
+./programa 1 100 1 -t
+./programa 1 200 1 -t
+./programa 1 2000 1 -t
+./programa 1 20000 1 -t
+./programa 1 200000 1 -t
+./programa 1 2000000 1 -t
+
+./programa 1 100 2 -t
+./programa 1 200 2 -t
+./programa 1 2000 2 -t
+./programa 1 20000 2 -t
+./programa 1 200000 2 -t
+./programa 1 2000000 2 -t
+
+./programa 1 100 3 -t
+./programa 1 200 3 -t
+./programa 1 2000 3 -t
+./programa 1 20000 3 -t
+./programa 1 200000 3 -t
+./programa 1 2000000 3 -t
+
+
+
+
+
+
+
+ASCENDENTE
+
+Teste com 100 registros
+
+indice criado: 25 paginas | tempo criacao indice: 0.005 s | transf: 25
+
+iniciando pesquisa de 20 chaves aleatorias
+chave buscada: 60 | encontrada | transferencias: 4 | comp: 19 | tempo: 0.001 s
+chave buscada: 16 | encontrada | transferencias: 4 | comp: 8 | tempo: 0.001 s
+chave buscada: 90 | encontrada | transferencias: 4 | comp: 25 | tempo: 0.001 s
+chave buscada: 87 | encontrada | transferencias: 4 | comp: 25 | tempo: 0.001 s
+chave buscada: 100 | encontrada | transferencias: 4 | comp: 29 | tempo: 0.002 s
+chave buscada: 47 | encontrada | transferencias: 4 | comp: 15 | tempo: 0.001 s
+chave buscada: 62 | encontrada | transferencias: 4 | comp: 18 | tempo: 0.002 s
+chave buscada: 48 | encontrada | transferencias: 4 | comp: 16 | tempo: 0.002 s
+chave buscada: 80 | encontrada | transferencias: 4 | comp: 24 | tempo: 0.002 s
+chave buscada: 51 | encontrada | transferencias: 4 | comp: 16 | tempo: 0.002 s
+chave buscada: 34 | encontrada | transferencias: 4 | comp: 11 | tempo: 0.002 s
+chave buscada: 79 | encontrada | transferencias: 4 | comp: 23 | tempo: 0.002 s
+chave buscada: 61 | encontrada | transferencias: 4 | comp: 17 | tempo: 0.001 s
+chave buscada: 67 | encontrada | transferencias: 4 | comp: 20 | tempo: 0.001 s
+chave buscada: 26 | encontrada | transferencias: 4 | comp: 9 | tempo: 0.001 s
+chave buscada: 78 | encontrada | transferencias: 4 | comp: 22 | tempo: 0.001 s
+chave buscada: 57 | encontrada | transferencias: 4 | comp: 16 | tempo: 0.002 s
+chave buscada: 93 | encontrada | transferencias: 4 | comp: 25 | tempo: 0.002 s
+chave buscada: 81 | encontrada | transferencias: 4 | comp: 22 | tempo: 0.002 s
+chave buscada: 55 | encontrada | transferencias: 4 | comp: 17 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.005 s | transf indice: 25
+pesquisas: 20 | comp totais: 377 | transf totais: 80 | tempo pesquisa: 0.032 s
+tempo TOTAL: 0.038 s
+Teste com 200 registros
+
+indice criado: 50 paginas | tempo criacao indice: 0.014 s | transf: 50
+
+iniciando pesquisa de 20 chaves aleatorias
+chave buscada: 125 | encontrada | transferencias: 4 | comp: 33 | tempo: 0.001 s
+chave buscada: 194 | encontrada | transferencias: 4 | comp: 51 | tempo: 0.001 s
+chave buscada: 173 | encontrada | transferencias: 4 | comp: 45 | tempo: 0.002 s
+chave buscada: 146 | encontrada | transferencias: 4 | comp: 39 | tempo: 0.002 s
+chave buscada: 141 | encontrada | transferencias: 4 | comp: 37 | tempo: 0.002 s
+chave buscada: 3 | encontrada | transferencias: 4 | comp: 4 | tempo: 0.001 s
+chave buscada: 42 | encontrada | transferencias: 4 | comp: 13 | tempo: 0.001 s
+chave buscada: 185 | encontrada | transferencias: 4 | comp: 48 | tempo: 0.001 s
+chave buscada: 54 | encontrada | transferencias: 4 | comp: 16 | tempo: 0.002 s
+chave buscada: 97 | encontrada | transferencias: 4 | comp: 26 | tempo: 0.002 s
+chave buscada: 136 | encontrada | transferencias: 4 | comp: 38 | tempo: 0.001 s
+chave buscada: 151 | encontrada | transferencias: 4 | comp: 41 | tempo: 0.001 s
+chave buscada: 64 | encontrada | transferencias: 4 | comp: 20 | tempo: 0.002 s
+chave buscada: 197 | encontrada | transferencias: 4 | comp: 51 | tempo: 0.002 s
+chave buscada: 153 | encontrada | transferencias: 4 | comp: 40 | tempo: 0.002 s
+chave buscada: 59 | encontrada | transferencias: 4 | comp: 18 | tempo: 0.002 s
+chave buscada: 67 | encontrada | transferencias: 4 | comp: 20 | tempo: 0.002 s
+chave buscada: 68 | encontrada | transferencias: 4 | comp: 21 | tempo: 0.001 s
+chave buscada: 32 | encontrada | transferencias: 4 | comp: 12 | tempo: 0.001 s
+chave buscada: 100 | encontrada | transferencias: 4 | comp: 29 | tempo: 0.001 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.014 s | transf indice: 50
+pesquisas: 20 | comp totais: 602 | transf totais: 80 | tempo pesquisa: 0.032 s
+tempo TOTAL: 0.046 s
+Teste com 2000 registros
+
+indice criado: 500 paginas | tempo criacao indice: 0.125 s | transf: 500
+
+iniciando pesquisa de 20 chaves aleatorias
+chave buscada: 416 | encontrada | transferencias: 4 | comp: 108 | tempo: 0.002 s
+chave buscada: 632 | encontrada | transferencias: 4 | comp: 162 | tempo: 0.002 s
+chave buscada: 1617 | encontrada | transferencias: 4 | comp: 406 | tempo: 0.001 s
+chave buscada: 321 | encontrada | transferencias: 4 | comp: 82 | tempo: 0.001 s
+chave buscada: 1383 | encontrada | transferencias: 4 | comp: 349 | tempo: 0.002 s
+chave buscada: 1333 | encontrada | transferencias: 4 | comp: 335 | tempo: 0.002 s
+chave buscada: 1050 | encontrada | transferencias: 4 | comp: 265 | tempo: 0.002 s
+chave buscada: 341 | encontrada | transferencias: 4 | comp: 87 | tempo: 0.002 s
+chave buscada: 1257 | encontrada | transferencias: 4 | comp: 316 | tempo: 0.002 s
+chave buscada: 1246 | encontrada | transferencias: 4 | comp: 314 | tempo: 0.002 s
+chave buscada: 1 | encontrada | transferencias: 4 | comp: 2 | tempo: 0.001 s
+chave buscada: 687 | encontrada | transferencias: 4 | comp: 175 | tempo: 0.002 s
+chave buscada: 1013 | encontrada | transferencias: 4 | comp: 255 | tempo: 0.001 s
+chave buscada: 20 | encontrada | transferencias: 4 | comp: 9 | tempo: 0.001 s
+chave buscada: 1331 | encontrada | transferencias: 4 | comp: 336 | tempo: 0.002 s
+chave buscada: 455 | encontrada | transferencias: 4 | comp: 117 | tempo: 0.002 s
+chave buscada: 1346 | encontrada | transferencias: 4 | comp: 339 | tempo: 0.002 s
+chave buscada: 142 | encontrada | transferencias: 4 | comp: 38 | tempo: 0.002 s
+chave buscada: 1919 | encontrada | transferencias: 4 | comp: 483 | tempo: 0.002 s
+chave buscada: 283 | encontrada | transferencias: 4 | comp: 74 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.125 s | transf indice: 500
+pesquisas: 20 | comp totais: 4252 | transf totais: 80 | tempo pesquisa: 0.034 s
+tempo TOTAL: 0.159 s
+Teste com 20000 registros
+
+indice criado: 5000 paginas | tempo criacao indice: 1.242 s | transf: 5000
+
+iniciando pesquisa de 20 chaves aleatorias
+chave buscada: 9596 | encontrada | transferencias: 4 | comp: 2403 | tempo: 0.002 s
+chave buscada: 12891 | encontrada | transferencias: 4 | comp: 3226 | tempo: 0.001 s
+chave buscada: 17110 | encontrada | transferencias: 4 | comp: 4280 | tempo: 0.001 s
+chave buscada: 15034 | encontrada | transferencias: 4 | comp: 3761 | tempo: 0.001 s
+chave buscada: 10042 | encontrada | transferencias: 4 | comp: 2513 | tempo: 0.002 s
+chave buscada: 4399 | encontrada | transferencias: 4 | comp: 1103 | tempo: 0.002 s
+chave buscada: 11264 | encontrada | transferencias: 4 | comp: 2820 | tempo: 0.002 s
+chave buscada: 8771 | encontrada | transferencias: 4 | comp: 2196 | tempo: 0.002 s
+chave buscada: 14378 | encontrada | transferencias: 4 | comp: 3597 | tempo: 0.002 s
+chave buscada: 1053 | encontrada | transferencias: 4 | comp: 265 | tempo: 0.001 s
+chave buscada: 7739 | encontrada | transferencias: 4 | comp: 1938 | tempo: 0.001 s
+chave buscada: 3030 | encontrada | transferencias: 4 | comp: 760 | tempo: 0.001 s
+chave buscada: 4389 | encontrada | transferencias: 4 | comp: 1099 | tempo: 0.002 s
+chave buscada: 11575 | encontrada | transferencias: 4 | comp: 2897 | tempo: 0.003 s
+chave buscada: 10525 | encontrada | transferencias: 4 | comp: 2633 | tempo: 0.002 s
+chave buscada: 6887 | encontrada | transferencias: 4 | comp: 1725 | tempo: 0.002 s
+chave buscada: 921 | encontrada | transferencias: 4 | comp: 232 | tempo: 0.002 s
+chave buscada: 7290 | encontrada | transferencias: 4 | comp: 1825 | tempo: 0.002 s
+chave buscada: 13214 | encontrada | transferencias: 4 | comp: 3306 | tempo: 0.001 s
+chave buscada: 3815 | encontrada | transferencias: 4 | comp: 957 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 1.242 s | transf indice: 5000
+pesquisas: 20 | comp totais: 43536 | transf totais: 80 | tempo pesquisa: 0.034 s
+tempo TOTAL: 1.276 s
+Teste com 200000 registros
+
+indice criado: 50000 paginas | tempo criacao indice: 13.829 s | transf: 50000
+
+iniciando pesquisa de 20 chaves aleatorias
+chave buscada: 56571 | encontrada | transferencias: 4 | comp: 14146 | tempo: 0.002 s
+chave buscada: 103091 | encontrada | transferencias: 4 | comp: 25776 | tempo: 0.002 s
+chave buscada: 33105 | encontrada | transferencias: 4 | comp: 8278 | tempo: 0.002 s
+chave buscada: 6924 | encontrada | transferencias: 4 | comp: 1735 | tempo: 0.002 s
+chave buscada: 79917 | encontrada | transferencias: 4 | comp: 19981 | tempo: 0.002 s
+chave buscada: 9075 | encontrada | transferencias: 4 | comp: 2272 | tempo: 0.002 s
+chave buscada: 104247 | encontrada | transferencias: 4 | comp: 26065 | tempo: 0.002 s
+chave buscada: 154627 | encontrada | transferencias: 4 | comp: 38660 | tempo: 0.002 s
+chave buscada: 174146 | encontrada | transferencias: 4 | comp: 43539 | tempo: 0.001 s
+chave buscada: 157114 | encontrada | transferencias: 4 | comp: 39281 | tempo: 0.002 s
+chave buscada: 84220 | encontrada | transferencias: 4 | comp: 21059 | tempo: 0.002 s
+chave buscada: 124422 | encontrada | transferencias: 4 | comp: 31108 | tempo: 0.002 s
+chave buscada: 173804 | encontrada | transferencias: 4 | comp: 43455 | tempo: 0.002 s
+chave buscada: 60693 | encontrada | transferencias: 4 | comp: 15175 | tempo: 0.002 s
+chave buscada: 161513 | encontrada | transferencias: 4 | comp: 40380 | tempo: 0.002 s
+chave buscada: 150930 | encontrada | transferencias: 4 | comp: 37735 | tempo: 0.002 s
+chave buscada: 98019 | encontrada | transferencias: 4 | comp: 24508 | tempo: 0.003 s
+chave buscada: 198167 | encontrada | transferencias: 4 | comp: 49545 | tempo: 0.002 s
+chave buscada: 86330 | encontrada | transferencias: 4 | comp: 21585 | tempo: 0.002 s
+chave buscada: 167136 | encontrada | transferencias: 4 | comp: 41788 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 13.829 s | transf indice: 50000
+pesquisas: 20 | comp totais: 546071 | transf totais: 80 | tempo pesquisa: 0.035 s
+tempo TOTAL: 13.864 s
+Teste com 2000000 registros
+
+indice criado: 500000 paginas | tempo criacao indice: 125.713 s | transf: 500000
+
+iniciando pesquisa de 20 chaves aleatorias
+chave buscada: 1044394 | encontrada | transferencias: 4 | comp: 261101 | tempo: 0.002 s
+chave buscada: 1758846 | encontrada | transferencias: 4 | comp: 439714 | tempo: 0.003 s
+chave buscada: 1676192 | encontrada | transferencias: 4 | comp: 419052 | tempo: 0.003 s
+chave buscada: 897007 | encontrada | transferencias: 4 | comp: 224255 | tempo: 0.002 s
+chave buscada: 480136 | encontrada | transferencias: 4 | comp: 120038 | tempo: 0.002 s
+chave buscada: 663875 | encontrada | transferencias: 4 | comp: 165972 | tempo: 0.003 s
+chave buscada: 45754 | encontrada | transferencias: 4 | comp: 11441 | tempo: 0.002 s
+chave buscada: 1294696 | encontrada | transferencias: 4 | comp: 323678 | tempo: 0.002 s
+chave buscada: 1119947 | encontrada | transferencias: 4 | comp: 279990 | tempo: 0.002 s
+chave buscada: 114220 | encontrada | transferencias: 4 | comp: 28559 | tempo: 0.002 s
+chave buscada: 1332996 | encontrada | transferencias: 4 | comp: 333253 | tempo: 0.003 s
+chave buscada: 229919 | encontrada | transferencias: 4 | comp: 57483 | tempo: 0.002 s
+chave buscada: 650780 | encontrada | transferencias: 4 | comp: 162699 | tempo: 0.003 s
+chave buscada: 1006155 | encontrada | transferencias: 4 | comp: 251542 | tempo: 0.002 s
+chave buscada: 1362852 | encontrada | transferencias: 4 | comp: 340717 | tempo: 0.002 s
+chave buscada: 242204 | encontrada | transferencias: 4 | comp: 60555 | tempo: 0.002 s
+chave buscada: 1293598 | encontrada | transferencias: 4 | comp: 323402 | tempo: 0.002 s
+chave buscada: 243449 | encontrada | transferencias: 4 | comp: 60864 | tempo: 0.002 s
+chave buscada: 1605805 | encontrada | transferencias: 4 | comp: 401453 | tempo: 0.003 s
+chave buscada: 28234 | encontrada | transferencias: 4 | comp: 7061 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 125.713 s | transf indice: 500000
+pesquisas: 20 | comp totais: 4272829 | transf totais: 80 | tempo pesquisa: 0.047 s
+tempo TOTAL: 125.760 s
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DESCENDENTE
+
+Teste com 100 registros
+
+indice criado: 25 paginas | tempo criacao indice: 0.007 s | transf: 25
+
+iniciando pesquisa de 20 chaves aleatorias
+Pagina alvo nao encontradachave buscada: 1999904 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999963 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999952 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999947 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999994 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999927 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999937 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999910 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999986 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999991 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999989 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999911 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999941 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999987 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999950 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999922 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999901 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999973 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999978 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999928 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.007 s | transf indice: 25
+pesquisas: 20 | comp totais: 20 | transf totais: 0 | tempo pesquisa: 0.000 s
+tempo TOTAL: 0.007 s
+Teste com 200 registros
+
+indice criado: 50 paginas | tempo criacao indice: 0.014 s | transf: 50
+
+iniciando pesquisa de 20 chaves aleatorias
+Pagina alvo nao encontradachave buscada: 1999828 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999988 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999888 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999910 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999864 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999985 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999890 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999808 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999896 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999866 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999860 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999914 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999983 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999938 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999941 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999934 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999970 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999942 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999868 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999916 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.014 s | transf indice: 50
+pesquisas: 20 | comp totais: 20 | transf totais: 0 | tempo pesquisa: 0.000 s
+tempo TOTAL: 0.014 s
+Teste com 2000 registros
+
+indice criado: 500 paginas | tempo criacao indice: 0.125 s | transf: 500
+
+iniciando pesquisa de 20 chaves aleatorias
+Pagina alvo nao encontradachave buscada: 1999455 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998824 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998641 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998449 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998365 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998494 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999213 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999161 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999940 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999494 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999644 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999806 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1999216 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998985 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998828 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998573 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998981 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998762 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998409 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1998902 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.125 s | transf indice: 500
+pesquisas: 20 | comp totais: 20 | transf totais: 0 | tempo pesquisa: 0.000 s
+tempo TOTAL: 0.125 s
+Teste com 20000 registros
+
+indice criado: 5000 paginas | tempo criacao indice: 1.244 s | transf: 5000
+
+iniciando pesquisa de 20 chaves aleatorias
+Pagina alvo nao encontradachave buscada: 1993631 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1981249 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1997704 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1991435 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1990419 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1997574 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1984014 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1985349 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1988573 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1980838 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1990915 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1990374 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1987032 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1995039 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1980489 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1992886 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1987638 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1992936 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1981263 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1988997 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+
+=== RESULTADOS ===
+tempo criacao indice: 1.244 s | transf indice: 5000
+pesquisas: 20 | comp totais: 20 | transf totais: 0 | tempo pesquisa: 0.000 s
+tempo TOTAL: 1.244 s
+Teste com 200000 registros
+
+indice criado: 50000 paginas | tempo criacao indice: 12.499 s | transf: 50000
+
+iniciando pesquisa de 20 chaves aleatorias
+Pagina alvo nao encontradachave buscada: 1871833 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1822469 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1862313 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1887936 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1896413 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1988925 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1846416 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1987479 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1928622 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1810203 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1887754 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1925335 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1830857 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1987079 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1814076 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1985227 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1812308 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1838429 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1931173 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1830920 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+
+=== RESULTADOS ===
+tempo criacao indice: 12.499 s | transf indice: 50000
+pesquisas: 20 | comp totais: 20 | transf totais: 0 | tempo pesquisa: 0.000 s
+tempo TOTAL: 12.499 s
+Teste com 2000000 registros
+
+indice criado: 500000 paginas | tempo criacao indice: 126.300 s | transf: 500000
+
+iniciando pesquisa de 20 chaves aleatorias
+Pagina alvo nao encontradachave buscada: 1910529 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 759997 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 570282 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 364656 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1074234 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 213686 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 939948 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 346976 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1337691 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1919707 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1263603 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1050662 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1335858 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 945266 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 639964 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1522460 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1282288 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1463686 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1797562 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 1872653 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+
+=== RESULTADOS ===
+tempo criacao indice: 126.300 s | transf indice: 500000
+pesquisas: 20 | comp totais: 20 | transf totais: 0 | tempo pesquisa: 0.000 s
+tempo TOTAL: 126.300 s
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MISTO 
+Teste com 100 registros
+
+indice criado: 25 paginas | tempo criacao indice: 0.010 s | transf: 25
+
+iniciando pesquisa de 20 chaves aleatorias
+Pagina alvo nao encontradachave buscada: 135513 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1185200 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.003 s
+Pagina alvo nao encontradachave buscada: 454323 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1017424 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1035371 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1890571 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1900189 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 598308 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 866140 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.003 s
+Chave nao encontrada!
+chave buscada: 1137697 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1166960 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 33114 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1840249 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1997666 | nao encontrada | transferencias: 4 | comp: 29 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 778194 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1365080 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 699041 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Pagina alvo nao encontradachave buscada: 23182 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+chave buscada: 871175 | encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+chave buscada: 537066 | encontrada | transferencias: 4 | comp: 2 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.010 s | transf indice: 25
+pesquisas: 20 | comp totais: 119 | transf totais: 64 | tempo pesquisa: 0.028 s
+tempo TOTAL: 0.038 s
+Teste com 200 registros
+
+indice criado: 50 paginas | tempo criacao indice: 0.013 s | transf: 50
+
+iniciando pesquisa de 20 chaves aleatorias
+Chave nao encontrada!
+chave buscada: 1192212 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 784071 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 509622 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 726544 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 524547 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1650302 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 11434 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1824591 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1318601 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1845037 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1790588 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1947943 | nao encontrada | transferencias: 4 | comp: 16 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1452970 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1975578 | nao encontrada | transferencias: 4 | comp: 54 | tempo: 0.003 s
+Chave nao encontrada!
+chave buscada: 1958343 | nao encontrada | transferencias: 4 | comp: 54 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1363569 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1657312 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1977033 | nao encontrada | transferencias: 4 | comp: 54 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 674092 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1047610 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.013 s | transf indice: 50
+pesquisas: 20 | comp totais: 264 | transf totais: 68 | tempo pesquisa: 0.030 s
+tempo TOTAL: 0.043 s
+Teste com 2000 registros
+
+indice criado: 500 paginas | tempo criacao indice: 0.130 s | transf: 500
+
+iniciando pesquisa de 20 chaves aleatorias
+Chave nao encontrada!
+chave buscada: 1892092 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1638219 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 531473 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 118246 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 231129 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 920094 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Pagina alvo nao encontradachave buscada: 83033 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1170691 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 360667 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1385069 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1769781 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1205635 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Pagina alvo nao encontradachave buscada: 49068 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1044011 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 572186 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1110080 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 4571 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 720991 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1658817 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 691514 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 0.130 s | transf indice: 500
+pesquisas: 20 | comp totais: 88 | transf totais: 52 | tempo pesquisa: 0.020 s
+tempo TOTAL: 0.151 s
+Teste com 20000 registros
+
+indice criado: 5000 paginas | tempo criacao indice: 1.241 s | transf: 5000
+
+iniciando pesquisa de 20 chaves aleatorias
+Chave nao encontrada!
+chave buscada: 1227730 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 968205 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 90546 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 938683 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 770487 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1059441 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 121006 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 556378 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 503613 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1021570 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1319963 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1359906 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.003 s
+Pagina alvo nao encontradachave buscada: 1411 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 662886 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 93984 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1344982 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 289563 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 128845 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1068263 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1604425 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 1.241 s | transf indice: 5000
+pesquisas: 20 | comp totais: 82 | transf totais: 52 | tempo pesquisa: 0.023 s
+tempo TOTAL: 1.264 s
+Teste com 200000 registros
+
+indice criado: 50000 paginas | tempo criacao indice: 12.658 s | transf: 50000
+
+iniciando pesquisa de 20 chaves aleatorias
+Pagina alvo nao encontradachave buscada: 292959 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1707790 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1858822 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 977827 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 781549 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Pagina alvo nao encontradachave buscada: 35479 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1230726 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 495312 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1285661 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 936050 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 537756 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 956893 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1891578 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1176970 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1874822 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1970180 | nao encontrada | transferencias: 4 | comp: 116 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1409381 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 876060 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1258043 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1072575 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+
+=== RESULTADOS ===
+tempo criacao indice: 12.658 s | transf indice: 50000
+pesquisas: 20 | comp totais: 217 | transf totais: 68 | tempo pesquisa: 0.029 s
+tempo TOTAL: 12.687 s
+Teste com 2000000 registros
+
+indice criado: 500000 paginas | tempo criacao indice: 134.221 s | transf: 500000
+
+iniciando pesquisa de 20 chaves aleatorias
+Chave nao encontrada!
+chave buscada: 1831689 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1342578 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1955734 | nao encontrada | transferencias: 4 | comp: 116 | tempo: 0.002 s
+Pagina alvo nao encontradachave buscada: 488356 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 693174 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1608854 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Pagina alvo nao encontradachave buscada: 427834 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 162079 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 53354 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1127784 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 998339 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 807573 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1893470 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 1528105 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Pagina alvo nao encontradachave buscada: 308776 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 90837 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Pagina alvo nao encontradachave buscada: 486407 | nao encontrada | transferencias: 0 | comp: 1 | tempo: 0.000 s
+Chave nao encontrada!
+chave buscada: 1106667 | nao encontrada | transferencias: 4 | comp: 7 | tempo: 0.001 s
+Chave nao encontrada!
+chave buscada: 756671 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+Chave nao encontrada!
+chave buscada: 1030427 | nao encontrada | transferencias: 4 | comp: 5 | tempo: 0.002 s
+
+=== RESULTADOS ===
+tempo criacao indice: 134.221 s | transf indice: 500000
+pesquisas: 20 | comp totais: 197 | transf totais: 52 | tempo pesquisa: 0.020 s
+tempo TOTAL: 134.241 s

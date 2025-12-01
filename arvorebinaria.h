@@ -21,10 +21,10 @@ void inserirEmArquivo(const char *nomeArquivoArvore, Registro reg, long *comp);
 
 Registro* buscarEmArquivo(const char *nomeArquivoArvore, int chave, long *comp, long *transferencias);
 
-void lerArquivoArvoreBinaria(const char *nomeArquivoDados, const char *nomeArquivoArvore,
-                             int numRegistros, long *transferencias, long *comp, double *tempo);
+void lerArquivoArvoreBinaria(const char *nomeArquivoDados, const char *nomeArquivoArvore, int numRegistros, long *transferencias, long *comp, double *tempo);
 
 void pesquisar20AleatoriasAB(const char *nomeArquivoDados, const char *nomeArquivoArvore, int numRegistros);
+
 void executarArvoreBinaria(const char *nomeArquivo, int quantidade, int chave, int modoTeste, int imprimirChaves);
 
 #endif

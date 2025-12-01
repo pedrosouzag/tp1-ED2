@@ -1,0 +1,221 @@
+ascendente 
+
+
+Teste com 100 registros
+lendo 100 registros de registros_asc.bin construindo arvore em arvore_binaria.bin
+Tempo para construir arvore : 3.188
+pesquisando 20 chaves aleatorias
+chave 66 (pos 65) encontrada | transf: 66 | comp: 131
+chave 48 (pos 47) encontrada | transf: 48 | comp: 95
+chave 2 (pos 1) encontrada | transf: 2 | comp: 3
+chave 36 (pos 35) encontrada | transf: 36 | comp: 71
+chave 89 (pos 88) encontrada | transf: 89 | comp: 177
+chave 8 (pos 7) encontrada | transf: 8 | comp: 15
+chave 72 (pos 71) encontrada | transf: 72 | comp: 143
+chave 81 (pos 80) encontrada | transf: 81 | comp: 161
+chave 60 (pos 59) encontrada | transf: 60 | comp: 119
+chave 46 (pos 45) encontrada | transf: 46 | comp: 91
+chave 14 (pos 13) encontrada | transf: 14 | comp: 27
+chave 42 (pos 41) encontrada | transf: 42 | comp: 83
+chave 82 (pos 81) encontrada | transf: 82 | comp: 163
+chave 9 (pos 8) encontrada | transf: 9 | comp: 17
+chave 23 (pos 22) encontrada | transf: 23 | comp: 45
+chave 44 (pos 43) encontrada | transf: 44 | comp: 87
+chave 40 (pos 39) encontrada | transf: 40 | comp: 79
+chave 65 (pos 64) encontrada | transf: 65 | comp: 129
+chave 100 (pos 99) encontrada | transf: 100 | comp: 199
+chave 66 (pos 65) encontrada | transf: 66 | comp: 131
+pesquisas: 20 | comparacoes totais: 1966 | transferencias: 993 | tempo de pesquisa: 0.248 s
+
+Teste com 200 registros
+lendo 200 registros de registros_asc.bin construindo arvore em arvore_binaria.bin
+Tempo para construir arvore : 10.451
+pesquisando 20 chaves aleatorias
+chave 143 (pos 142) encontrada | transf: 143 | comp: 285
+chave 138 (pos 137) encontrada | transf: 138 | comp: 275
+chave 142 (pos 141) encontrada | transf: 142 | comp: 283
+chave 116 (pos 115) encontrada | transf: 116 | comp: 231
+chave 160 (pos 159) encontrada | transf: 160 | comp: 319
+chave 193 (pos 192) encontrada | transf: 193 | comp: 385
+chave 114 (pos 113) encontrada | transf: 114 | comp: 227
+chave 194 (pos 193) encontrada | transf: 194 | comp: 387
+chave 68 (pos 67) encontrada | transf: 68 | comp: 135
+chave 96 (pos 95) encontrada | transf: 96 | comp: 191
+chave 120 (pos 119) encontrada | transf: 120 | comp: 239
+chave 65 (pos 64) encontrada | transf: 65 | comp: 129
+chave 163 (pos 162) encontrada | transf: 163 | comp: 325
+chave 84 (pos 83) encontrada | transf: 84 | comp: 167
+chave 124 (pos 123) encontrada | transf: 124 | comp: 247
+chave 9 (pos 8) encontrada | transf: 9 | comp: 17
+chave 17 (pos 16) encontrada | transf: 17 | comp: 33
+chave 86 (pos 85) encontrada | transf: 86 | comp: 171
+chave 95 (pos 94) encontrada | transf: 95 | comp: 189
+chave 8 (pos 7) encontrada | transf: 8 | comp: 15
+pesquisas: 20 | comparacoes totais: 4250 | transferencias: 2135 | tempo de pesquisa: 0.469 s
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DESCENDENTE 
+
+Teste com 100 registros
+lendo 100 registros de registros_desc.bin construindo arvore em arvore_binaria.bin
+Tempo para construir arvore : 3.250
+pesquisando 20 chaves aleatorias
+chave 1999919 (pos 81) encontrada | transf: 82 | comp: 163
+chave 1999955 (pos 45) encontrada | transf: 46 | comp: 91
+chave 1999999 (pos 1) encontrada | transf: 2 | comp: 3
+chave 1999987 (pos 13) encontrada | transf: 14 | comp: 27
+chave 1999928 (pos 72) encontrada | transf: 73 | comp: 145
+chave 1999968 (pos 32) encontrada | transf: 33 | comp: 65
+chave 1999956 (pos 44) encontrada | transf: 45 | comp: 89
+chave 1999903 (pos 97) encontrada | transf: 98 | comp: 195
+chave 1999989 (pos 11) encontrada | transf: 12 | comp: 23
+chave 1999961 (pos 39) encontrada | transf: 40 | comp: 79
+chave 1999941 (pos 59) encontrada | transf: 60 | comp: 119
+chave 1999999 (pos 1) encontrada | transf: 2 | comp: 3
+chave 1999963 (pos 37) encontrada | transf: 38 | comp: 75
+chave 1999970 (pos 30) encontrada | transf: 31 | comp: 61
+chave 1999943 (pos 57) encontrada | transf: 58 | comp: 115
+chave 1999965 (pos 35) encontrada | transf: 36 | comp: 71
+chave 1999963 (pos 37) encontrada | transf: 38 | comp: 75
+chave 1999953 (pos 47) encontrada | transf: 48 | comp: 95
+chave 1999917 (pos 83) encontrada | transf: 84 | comp: 167
+chave 1999969 (pos 31) encontrada | transf: 32 | comp: 63
+pesquisas: 20 | comparacoes totais: 1724 | transferencias: 872 | tempo de pesquisa: 0.216 s
+
+Teste com 200 registros
+lendo 200 registros de registros_desc.bin construindo arvore em arvore_binaria.bin
+Tempo para construir arvore : 11.016
+pesquisando 20 chaves aleatorias
+chave 1999913 (pos 87) encontrada | transf: 88 | comp: 175
+chave 1999986 (pos 14) encontrada | transf: 15 | comp: 29
+chave 1999992 (pos 8) encontrada | transf: 9 | comp: 17
+chave 1999998 (pos 2) encontrada | transf: 3 | comp: 5
+chave 1999957 (pos 43) encontrada | transf: 44 | comp: 87
+chave 1999907 (pos 93) encontrada | transf: 94 | comp: 187
+chave 1999872 (pos 128) encontrada | transf: 129 | comp: 257
+chave 1999915 (pos 85) encontrada | transf: 86 | comp: 171
+chave 1999980 (pos 20) encontrada | transf: 21 | comp: 41
+chave 1999829 (pos 171) encontrada | transf: 172 | comp: 343
+chave 1999927 (pos 73) encontrada | transf: 74 | comp: 147
+chave 1999939 (pos 61) encontrada | transf: 62 | comp: 123
+chave 1999878 (pos 122) encontrada | transf: 123 | comp: 245
+chave 1999940 (pos 60) encontrada | transf: 61 | comp: 121
+chave 1999933 (pos 67) encontrada | transf: 68 | comp: 135
+chave 1999811 (pos 189) encontrada | transf: 190 | comp: 379
+chave 1999946 (pos 54) encontrada | transf: 55 | comp: 109
+chave 1999944 (pos 56) encontrada | transf: 57 | comp: 113
+chave 1999957 (pos 43) encontrada | transf: 44 | comp: 87
+chave 1999893 (pos 107) encontrada | transf: 108 | comp: 215
+pesquisas: 20 | comparacoes totais: 2986 | transferencias: 1503 | tempo de pesquisa: 0.365 s
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MISTO
+
+
+Teste com 100 registros
+lendo 100 registros de registros_mix.bin construindo arvore em arvore_binaria.bin
+Tempo para construir arvore : 1.341
+pesquisando 20 chaves aleatorias
+chave 1958343 (pos 71) encontrada | transf: 7 | comp: 13
+chave 1734048 (pos 33) encontrada | transf: 9 | comp: 17
+chave 760762 (pos 27) encontrada | transf: 6 | comp: 11
+chave 477507 (pos 11) encontrada | transf: 4 | comp: 7
+chave 495524 (pos 78) encontrada | transf: 6 | comp: 11
+chave 1841961 (pos 23) encontrada | transf: 6 | comp: 11
+chave 1261936 (pos 25) encontrada | transf: 8 | comp: 15
+chave 1464917 (pos 97) encontrada | transf: 8 | comp: 15
+chave 1689984 (pos 73) encontrada | transf: 10 | comp: 19
+chave 454323 (pos 9) encontrada | transf: 3 | comp: 5
+chave 1958343 (pos 71) encontrada | transf: 7 | comp: 13
+chave 1947943 (pos 59) encontrada | transf: 7 | comp: 13
+chave 382783 (pos 87) encontrada | transf: 9 | comp: 17
+chave 61622 (pos 37) encontrada | transf: 5 | comp: 9
+chave 1638219 (pos 75) encontrada | transf: 9 | comp: 17
+chave 261858 (pos 26) encontrada | transf: 7 | comp: 13
+chave 1365080 (pos 19) encontrada | transf: 8 | comp: 15
+chave 1638219 (pos 75) encontrada | transf: 9 | comp: 17
+chave 195457 (pos 39) encontrada | transf: 8 | comp: 15
+chave 144182 (pos 17) encontrada | transf: 5 | comp: 9
+pesquisas: 20 | comparacoes totais: 262 | transferencias: 141 | tempo de pesquisa: 0.086 s
+
+Teste com 200 registros
+lendo 200 registros de registros_mix.bin construindo arvore em arvore_binaria.bin
+Tempo para construir arvore : 2.922
+pesquisando 20 chaves aleatorias
+chave 726544 (pos 112) encontrada | transf: 8 | comp: 15
+chave 758574 (pos 161) encontrada | transf: 9 | comp: 17
+chave 1137697 (pos 95) encontrada | transf: 9 | comp: 17
+chave 774444 (pos 131) encontrada | transf: 8 | comp: 15
+chave 1890571 (pos 36) encontrada | transf: 7 | comp: 13
+chave 758574 (pos 161) encontrada | transf: 9 | comp: 17
+chave 999971 (pos 179) encontrada | transf: 11 | comp: 21
+chave 1595812 (pos 168) encontrada | transf: 11 | comp: 21
+chave 1418072 (pos 133) encontrada | transf: 10 | comp: 19
+chave 1035371 (pos 30) encontrada | transf: 7 | comp: 13
+chave 144182 (pos 17) encontrada | transf: 5 | comp: 9
+chave 1434043 (pos 192) encontrada | transf: 9 | comp: 17
+chave 1230229 (pos 40) encontrada | transf: 10 | comp: 19
+chave 1452970 (pos 55) encontrada | transf: 7 | comp: 13
+chave 1418072 (pos 133) encontrada | transf: 10 | comp: 19
+chave 1933091 (pos 123) encontrada | transf: 9 | comp: 17
+chave 726715 (pos 6) encontrada | transf: 5 | comp: 9
+chave 1500913 (pos 199) encontrada | transf: 10 | comp: 19
+chave 469189 (pos 106) encontrada | transf: 6 | comp: 11
+chave 1018706 (pos 62) encontrada | transf: 8 | comp: 15
+pesquisas: 20 | comparacoes totais: 316 | transferencias: 168 | tempo de pesquisa: 0.091 s
+
+Teste com 2000 registros
+lendo 2000 registros de registros_mix.bin construindo arvore em arvore_binaria.bin
+Tempo para construir arvore : 39.487
+pesquisando 20 chaves aleatorias
+chave 1052176 (pos 545) encontrada | transf: 15 | comp: 29
+chave 1801484 (pos 1740) encontrada | transf: 17 | comp: 33
+chave 116165 (pos 341) encontrada | transf: 14 | comp: 27
+chave 685677 (pos 470) encontrada | transf: 13 | comp: 25
+chave 132606 (pos 986) encontrada | transf: 8 | comp: 15
+chave 1083378 (pos 70) encontrada | transf: 9 | comp: 17
+chave 667795 (pos 540) encontrada | transf: 13 | comp: 25
+chave 1127256 (pos 1073) encontrada | transf: 14 | comp: 27
+chave 492460 (pos 1690) encontrada | transf: 13 | comp: 25
+chave 1505001 (pos 157) encontrada | transf: 9 | comp: 17
+chave 1868906 (pos 1231) encontrada | transf: 15 | comp: 29
+chave 1634301 (pos 816) encontrada | transf: 14 | comp: 27
+chave 459310 (pos 868) encontrada | transf: 10 | comp: 19
+chave 1826716 (pos 1999) encontrada | transf: 15 | comp: 29
+chave 150204 (pos 741) encontrada | transf: 13 | comp: 25
+chave 280092 (pos 1137) encontrada | transf: 18 | comp: 35
+chave 1307575 (pos 180) encontrada | transf: 12 | comp: 23
+chave 1554010 (pos 1562) encontrada | transf: 19 | comp: 37
+chave 202704 (pos 472) encontrada | transf: 12 | comp: 23
+chave 670737 (pos 1440) encontrada | transf: 18 | comp: 35
+pesquisas: 20 | comparacoes totais: 522 | transferencias: 271 | tempo de pesquisa: 0.128 s
+
+Teste com 20000 registros
+lendo 20000 registros de registros_mix.bin construindo arvore em arvore_binaria.bin
+Tempo para construir arvore : 432.157
+pesquisando 20 chaves aleatorias
+chave 1107279 (pos 11250) encontrada | transf: 16 | comp: 31
+chave 1639979 (pos 18904) encontrada | transf: 18 | comp: 35
+chave 633702 (pos 12141) encontrada | transf: 16 | comp: 31
+chave 505653 (pos 16918) encontrada | transf: 14 | comp: 27
+chave 1880550 (pos 19426) encontrada | transf: 18 | comp: 35
+chave 739860 (pos 2457) encontrada | transf: 17 | comp: 33
+chave 1564947 (pos 5629) encontrada | transf: 21 | comp: 41
+chave 860589 (pos 4411) encontrada | transf: 25 | comp: 49
+chave 637026 (pos 19274) encontrada | transf: 18 | comp: 35
+chave 354975 (pos 15024) encontrada | transf: 28 | comp: 55
+chave 95979 (pos 10578) encontrada | transf: 17 | comp: 33
+chave 103671 (pos 8670) encontrada | transf: 19 | comp: 37
+chave 1938972 (pos 18614) encontrada | transf: 18 | comp: 35
+chave 774364 (pos 9456) encontrada | transf: 13 | comp: 25
+chave 430856 (pos 12841) encontrada | transf: 20 | comp: 39
+chave 158932 (pos 3950) encontrada | transf: 21 | comp: 41
+chave 501533 (pos 5360) encontrada | transf: 13 | comp: 25
+chave 578123 (pos 2571) encontrada | transf: 20 | comp: 39
+chave 65695 (pos 14595) encontrada | transf: 17 | comp: 33
+chave 839614 (pos 1678) encontrada | transf: 17 | comp: 33
+pesquisas: 20 | comparacoes totais: 712 | transferencias: 366 | tempo de pesquisa: 0.276 s
+
+
+

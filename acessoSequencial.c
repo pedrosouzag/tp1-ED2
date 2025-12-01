@@ -27,12 +27,12 @@ int criarIndicePaginas(const char *nomeArquivo, TipoIndice tabela[],  int numReg
         if (fread(&reg, sizeof(TipoItem), 1, arquivo) == 1) {
             tabela[i].posicao = i;           //numero da pagina
             tabela[i].chave = reg.chave;     //primeira chave da pagina
-            (*transferencias)++;              //conta leitura do primeiro registro
+            (*transferencias)++;              
         }
     }
     
     fclose(arquivo);
-    
+    // calculo do tempo
     double fim = now_seconds();
     *tempoCriacao = (fim - inicio);
     
@@ -44,11 +44,11 @@ int buscarPaginaNoIndice(int chave, TipoIndice tabela[], int numPaginas, long *c
     *comp = 0;
     int paginaAlvo = -1;
     
-    // Busca sequencial no indice
+    // busca sequencial no indice
     for (int i = 0; i < numPaginas; i++) {
         (*comp)++;
         
-        // Se e a ultima pagina ou se a chave e menor que a proxima pagina
+        // Se eh a ultima pagina ou se a chave eh menor que a proxima pagina
         if (i == numPaginas - 1 || chave < tabela[i + 1].chave) {
             if (chave >= tabela[i].chave) {
                 paginaAlvo = tabela[i].posicao;
@@ -72,12 +72,12 @@ int buscarPaginaNoIndiceBinario(int chave, TipoIndice tabela[], int numPaginas, 
         int meio = (inicio + fim) / 2;
         (*comp)++;
 
-        // Verifica se a chave pertence ao intervalo desta página
+        // verifica se a chave pertence ao intervalo desta pagina
         if ((meio == numPaginas - 1 || chave < tabela[meio + 1].chave) && chave >= tabela[meio].chave) {
-            return tabela[meio].posicao;  // retorno correto
+            return tabela[meio].posicao; 
         }
 
-        // Decide para qual lado ir
+        // decide para qual lado ir
         if (chave < tabela[meio].chave) {
             fim = meio - 1;
         } else {
@@ -89,7 +89,7 @@ int buscarPaginaNoIndiceBinario(int chave, TipoIndice tabela[], int numPaginas, 
 }
 
 
-// Funcao auxiliar para carregar uma pagina do arquivo
+// carregar pagina de um arquivo
 int carregarPagina(const char *nomeArquivo, int numPagina, PaginaAS *paginaAlvo, int numRegistros, long *transferencias) {
     FILE *arquivo = fopen(nomeArquivo, "rb");
     if (!arquivo) {
@@ -116,8 +116,7 @@ int carregarPagina(const char *nomeArquivo, int numPagina, PaginaAS *paginaAlvo,
     fclose(arquivo);
     return paginaAlvo->numItens > 0;
 }
-
-// Funcao auxiliar para buscar dentro de uma pagina
+// funcao para buscar dentro da uma pahina
 int buscarNaPagina(int chave, PaginaAS *pag, long *comp, TipoItem *resultado) {
     for (int i = 0; i < pag->numItens; i++) {
         (*comp)++;
@@ -182,7 +181,7 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
         printf ("Pagina alvo nao encontrada");
     }
     
-    // Libera apenas se criou agora
+    // libera apenas se criou agora
     if (criadoAgora) {
         free(indiceLocal);
     }
@@ -256,11 +255,9 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
 
         // mostra o resultado da busca
         if (encontrado) {
-            printf("chave buscada: %d | encontrada | transferencias: %ld | comp: %ld | tempo: %.3f s\n",
-                   chaveAtual, transf, comp, tempo);
+            printf("chave buscada: %d | encontrada | transferencias: %ld | comp: %ld | tempo: %.3f s\n", chaveAtual, transf, comp, tempo);
         } else {
-            printf("chave buscada: %d | nao encontrada | transferencias: %ld | comp: %ld | tempo: %.3f s\n",
-                   chaveAtual, transf, comp, tempo);
+            printf("chave buscada: %d | nao encontrada | transferencias: %ld | comp: %ld | tempo: %.3f s\n", chaveAtual, transf, comp, tempo);
         }
 
         compTotal += comp;
@@ -270,8 +267,7 @@ void pesquisar20AleatoriasSI(const char *nomeArquivo, int quantidade) {
 
     printf("\n=== RESULTADOS ===\n");
     printf("tempo criacao indice: %.3f s | transf indice: %ld\n", tempoCriacaoIndice, transfIndice);
-    printf("pesquisas: 20 | comp totais: %ld | transf totais: %ld | tempo pesquisa: %.3f s\n",
-           compTotal, transfTotal, tempoPesquisaTotal);
+    printf("pesquisas: 20 | comp totais: %ld | transf totais: %ld | tempo pesquisa: %.3f s\n", compTotal, transfTotal, tempoPesquisaTotal);
     printf("tempo TOTAL: %.3f s\n", tempoCriacaoIndice + tempoPesquisaTotal);
 
     free(chaves);

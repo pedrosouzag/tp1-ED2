@@ -168,8 +168,7 @@ void lerArquivoBinario(const char *nomeArquivoDados, const char *nomeArquivoArvo
     *transferencias = 0;
     *comp = 0;
 
-    printf("lendo %d registros de %s construindo arvore em %s\n",
-           numRegistros, nomeArquivoDados, nomeArquivoArvore);
+    printf("lendo %d registros de %s construindo arvore em %s\n", numRegistros, nomeArquivoDados, nomeArquivoArvore);
 
     inicio = now_seconds();
 
@@ -281,11 +280,11 @@ void executarArvoreBinaria(const char *nomeArquivo, int quantidade, int chave, i
     // pasando variveis de comp, transferencias e marcando o tempo
     long compBusca = 0;
     long transfBusca = 0;
-    double incio = now_seconds();
+    double inicio = now_seconds();
     Registro *resultado = buscarEmArquivo(arquivoArvore, chave, &compBusca, &transfBusca);
     double fim = now_seconds();
 
-    tempoPesquisa = incio - fim;
+    tempoPesquisa = fim - inicio;
 
     // somar os valores da busca aos totais
     transferencias += transfBusca;
