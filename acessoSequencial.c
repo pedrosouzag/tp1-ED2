@@ -144,7 +144,7 @@ void lerArquivoSequencial(const char *nomeArquivo, int quantidade, int chave, lo
     
     // cria o vetor em casa de testo manual 
     if (indiceLocal == NULL) {
-        paginasLocal = (quantidade + ITENSPAGINA - 1) / ITENSPAGINA;
+        paginasLocal = (quantidade + ITENSPAGINA - 1) / ITENSPAGINA; 
         indiceLocal = (TipoIndice *)malloc(paginasLocal * sizeof(TipoIndice));
         if (!indiceLocal) return;
         
