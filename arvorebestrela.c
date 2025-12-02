@@ -216,7 +216,7 @@ void insBEstrela(Registro reg, PaginaEstrela *pagina, short *cresceu, Registro *
         // ajusta a quantidade de registros na pagina atual
         pagina->conteudo.externa.numRegistros = ORDEM_ESTRELA + 1; 
         
-        // a chave que sobe eh a primeira da nova pagina 
+        // a chave que sobe eh a primeira da nova pagina ou a maior chave da antiga, nesse caso usamso amior da antiga
         *regRetorno = pagina->conteudo.externa.registros[ORDEM_ESTRELA]; 
         *paginaRetorno = paginaTemp;
         *cresceu = VERDADEIRO; // indica que precisa subir uma chave
