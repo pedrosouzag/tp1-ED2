@@ -17,7 +17,8 @@ void insereNaPaginaInterna(PaginaEstrela *pagina, int chave, PaginaEstrela *pagi
         //se nao encontrar ele move o pai e o filho pra direita 
         pagina->conteudo.interna.chaves[k] = pagina->conteudo.interna.chaves[k - 1];
         pagina->conteudo.interna.filhos[k + 1] = pagina->conteudo.interna.filhos[k];
-        k--;   
+        k--;
+        
     }
     
     //insere a chave e o ponteiro na posicao encontrada
@@ -117,7 +118,7 @@ void insBEstrela(Registro reg, PaginaEstrela *pagina, short *cresceu, Registro *
             return;
         }
 
-        //se o filho cresceu sobe uma chave
+        //se o filho cresceu, subiu uma chave
         //tenta inserir a chave que subiu nesta pagina interna
         
         //se tiver espaco insere
@@ -256,6 +257,9 @@ void insereBEstrela(Registro reg, PaginaEstrela **raiz, long *comparacoes) {
         *raiz = paginaTemp; // atualiza raiz
     }
 }
+
+
+
 
 // construcao da arvore via arquivo 
 void lerArquivoArvoreBEstrela(const char *nomeArquivo, int numRegistros, PaginaEstrela **raiz, long *transferencias, long *comparacoes, double *tempo) {
