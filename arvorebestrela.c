@@ -154,8 +154,8 @@ void insBEstrela(Registro reg, PaginaEstrela *pagina, short *cresceu, Registro *
         }
 
         //ajusta os tamanhos
-        pagina->conteudo.interna.numChaves = ORDEM_ESTRELA;
-        paginaTemp->conteudo.interna.filhos[0] = pagina->conteudo.interna.filhos[ORDEM_ESTRELA + 1];
+        pagina->conteudo.interna.numChaves = ORDEM_ESTRELA; // tiramos a que movemos e que vamos subir
+        paginaTemp->conteudo.interna.filhos[0] = pagina->conteudo.interna.filhos[ORDEM_ESTRELA + 1]; // atualizando o filho da esquerda
 
         //promove a chave do meio para subir (elemento na posicao ORDEM_ESTRELA)
         regRetorno->chave = pagina->conteudo.interna.chaves[ORDEM_ESTRELA];
@@ -214,9 +214,9 @@ void insBEstrela(Registro reg, PaginaEstrela *pagina, short *cresceu, Registro *
         }
 
         // ajusta a quantidade de registros na pagina atual
-        pagina->conteudo.externa.numRegistros = ORDEM_ESTRELA + 1; 
+        pagina->conteudo.externa.numRegistros = ORDEM_ESTRELA + 1; // tiramos as que movemos e mantemos a que vamos subir
         
-        // a chave que sobe eh a primeira da nova pagina ou a maior chave da antiga, nesse caso usamso amior da antiga
+        // a chave que sobe eh a primeira da nova pagina ou a maior chave da antiga, nesse caso usamos maior da antiga
         *regRetorno = pagina->conteudo.externa.registros[ORDEM_ESTRELA]; 
         *paginaRetorno = paginaTemp;
         *cresceu = VERDADEIRO; // indica que precisa subir uma chave
