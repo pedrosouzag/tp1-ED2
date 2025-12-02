@@ -220,6 +220,7 @@ void insBEstrela(Registro reg, PaginaEstrela *pagina, short *cresceu, Registro *
         *regRetorno = pagina->conteudo.externa.registros[ORDEM_ESTRELA]; 
         *paginaRetorno = paginaTemp;
         *cresceu = VERDADEIRO; // indica que precisa subir uma chave
+        return;
     }
 }
 
